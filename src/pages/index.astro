@@ -6,33 +6,46 @@ import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 
 const CHROME_URL = "https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf";
 const GUMROAD_URL = "https://zhorizon7.gumroad.com/l/alfvjx";
-const YT_PLAYLIST = "https://www.youtube.com/playlist?list=PLxxxxxxxxxxxxxxx"; // replace with real playlist
+const YT_PLAYLIST = "https://www.youtube.com/playlist?list=PL-DfyZg6D8FkGX8t4j_NyGqKCGUIl9sAW";
+
+const videos = [
+  { id: "fifxxfVrXjU", title: "Quotex Bot — Complete Tutorial 2026", desc: "Full setup guide from installation to first automated trade" },
+  { id: "juJEJd_no44", title: "Martingale Strategy Explained", desc: "How martingale works and best sequences" },
+  { id: "OzfBVqXIFJY", title: "Live Trading Demo", desc: "Real account trading session with Quotex Bot" },
+  { id: "KC54Y0TfEWI", title: "Mobile Trading on Lemur Browser", desc: "How to use Quotex Bot on Android mobile" },
+  { id: "dTmgnq5DyEQ", title: "Compounding Mode Guide", desc: "Grow your account faster with compounding" },
+  { id: "o-qC-uFmpV4", title: "Take Profit & Stop Loss Setup", desc: "Risk management for consistent trading" },
+  { id: "4aRa7tu259Q", title: "Custom Presets & Sequences", desc: "Create and save your own trading strategies" },
+  { id: "9UaGMjOMjkw", title: "Quotex Bot Promo — Full Overview", desc: "Everything about Quotex Bot in one video" },
+];
+
+const mainVideo = videos[7]; // promo video
 
 const features = [
   { icon: "🤖", title: "Full Auto Trading", desc: "Set your sequence once and let the bot place trades 24/7. No manual clicking required." },
   { icon: "📊", title: "Martingale Strategy", desc: "Built-in martingale logic automatically adjusts investment after each loss to recover." },
   { icon: "📈", title: "Compounding Mode", desc: "Enable compounding to grow your position on wins instead of resetting." },
-  { icon: "🎯", title: "Take Profit", desc: "Bot stops automatically when net profit reaches your target." },
-  { icon: "🛑", title: "Stop Loss", desc: "Bot stops automatically when net loss reaches your limit." },
+  { icon: "🎯", title: "Take Profit", desc: "Bot stops automatically when net profit reaches your target amount." },
+  { icon: "🛑", title: "Stop Loss", desc: "Bot stops automatically when net loss reaches your set limit." },
   { icon: "⏰", title: "Timer Auto Stop", desc: "Set a duration — bot runs for exactly that time then stops." },
-  { icon: "🎮", title: "Free Demo Mode", desc: "Try the full bot on Quotex demo account completely free." },
-  { icon: "⭐", title: "Custom Presets", desc: "Save your own trading strategies. Apply with one click." },
+  { icon: "🎮", title: "Free Demo Mode", desc: "Try the full bot on Quotex demo account completely free forever." },
+  { icon: "⭐", title: "Custom Presets", desc: "Save your own trading strategies. Apply with one click anytime." },
 ];
 
 const reviews = [
   { name: "Santhosh K.", country: "India", flag: "🇮🇳", avatar: "SK", color: "#0070f3", rating: 5, text: "Best Quotex bot I've ever used! The martingale strategy works perfectly and take profit saved me from overtrading. Running on demo first was a great idea." },
   { name: "Sandy S.", country: "USA", flag: "🇺🇸", avatar: "SS", color: "#00a651", rating: 5, text: "I was skeptical but this bot genuinely works. Compounding mode combined with stop loss made my sessions very controlled. Worth every penny for live." },
   { name: "Subhash N.", country: "India", flag: "🇮🇳", avatar: "SN", color: "#7c3aed", rating: 5, text: "Trade detection is super fast. No delays between trades at all. WhatsApp support is also very responsive. Highly recommend!" },
-  { name: "Asif S.", country: "Pakistan", flag: "🇵🇰", avatar: "AS", color: "#059669", rating: 5, text: "I use it on mobile with Lemur browser. Works perfectly! The session stats showing profit, loss and net in real time is a fantastic feature." },
-  { name: "Jensen B.", country: "USA", flag: "🇺🇸", avatar: "JB", color: "#dc2626", rating: 4, text: "Great extension. The preset strategies save a lot of time. I use the Balanced preset mainly and results have been consistent over weeks." },
-  { name: "Bilas P.", country: "India", flag: "🇮🇳", avatar: "BP", color: "#d97706", rating: 5, text: "Amazing tool! Random pause between trades makes it look natural. The Chrome sidebar is so convenient compared to other bots I've tried." },
+  { name: "Asif S.", country: "Pakistan", flag: "🇵🇰", avatar: "AS", color: "#059669", rating: 5, text: "I use it on mobile with Lemur browser. Works perfectly! The session stats showing profit, loss and net in real time is fantastic." },
+  { name: "Jensen B.", country: "USA", flag: "🇺🇸", avatar: "JB", color: "#dc2626", rating: 4, text: "Great extension. The preset strategies save a lot of time. Balanced preset has given me consistent results over weeks of trading." },
+  { name: "Bilas P.", country: "India", flag: "🇮🇳", avatar: "BP", color: "#d97706", rating: 5, text: "Amazing tool! Random pause between trades makes it look natural. The Chrome sidebar is so convenient compared to other bots." },
 ];
 ---
 
 <Layout
   title="Quotex Bot — Free Quotex Martingale Trading Bot Chrome Extension 2026"
   description="Free Quotex Martingale Trading Bot Chrome Extension. Automate binary options trading on QXBroker with martingale strategy, take profit, stop loss, compounding and live session stats. Free on demo, $20/month live."
-  keywords="quotex bot, quotex trading bot, quotex martingale bot, quotex auto trading, quotex chrome extension, qxbroker bot, binary options bot, quotex martingale strategy 2026, quotex bot free download, binary trading bot chrome"
+  keywords="quotex bot, quotex trading bot, quotex martingale bot, quotex auto trading, quotex chrome extension, qxbroker bot, binary options bot, quotex martingale strategy 2026, quotex bot free download, binary trading bot chrome extension"
 >
   <Header />
 
@@ -47,10 +60,10 @@ const reviews = [
             <span class="badge badge-blue">🆕 v1.3 — 2026</span>
           </div>
           <h1>The Smartest<br/><span class="gradient-text">Quotex Trading Bot</span><br/>Chrome Extension</h1>
-          <p class="hero-desc">Automate your <strong>Quotex martingale trading strategy</strong> with the most advanced free Chrome extension for QXBroker. Smart take profit, stop loss, compounding and real-time stats.</p>
+          <p class="hero-desc">Automate your <strong>Quotex martingale trading strategy</strong> with the most advanced free Chrome extension for QXBroker. Smart take profit, stop loss, compounding and real-time stats — all in one sidebar.</p>
           <div class="hero-btns">
             <a href={CHROME_URL} target="_blank" rel="noopener" class="btn btn-primary btn-hero">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="currentColor"/><line x1="12" y1="2" x2="12" y2="8" stroke="currentColor" stroke-width="1.5"/><line x1="20.66" y1="17" x2="14.68" y2="14" stroke="currentColor" stroke-width="1.5"/><line x1="3.34" y1="17" x2="9.32" y2="14" stroke="currentColor" stroke-width="1.5"/></svg>
+              <svg class="chrome-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#fff" opacity=".25"/><circle cx="12" cy="12" r="4" fill="white"/><path d="M12 2 H22" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M12 2 L7 10.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M17 10.5 L7 10.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
               Add to Chrome — Free
             </a>
             <a href="/how-it-works" class="btn btn-secondary">▶ Watch Tutorial</a>
@@ -59,9 +72,9 @@ const reviews = [
         </div>
         <div class="hero-right">
           <div class="bot-card">
-            <div class="bc-header">
-              <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-              <span>🤖 Quotex Bot Sidebar</span>
+            <div class="bc-hdr">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span class="bc-title">🤖 Quotex Bot Sidebar</span>
             </div>
             <div class="bc-stats">
               <div class="bcs green">📈 Profit: +$47.20</div>
@@ -71,8 +84,8 @@ const reviews = [
             </div>
             <div class="bc-active">▶ Active — UP — $4</div>
             <div class="bc-seq">
-              <p class="seq-l">SEQUENCE</p>
-              <div class="seq-s"><span class="ss done">$1✓</span><span class="ss done">$2✓</span><span class="ss curr">$4→</span><span class="ss">$8</span></div>
+              <p class="seq-lbl">SEQUENCE</p>
+              <div class="seq-row"><span class="ss done">$1✓</span><span class="ss done">$2✓</span><span class="ss curr">$4→</span><span class="ss">$8</span></div>
             </div>
             <div class="bc-ctrls">
               <div class="bcc g">✅ Take Profit: $50</div>
@@ -86,18 +99,18 @@ const reviews = [
     </div>
   </section>
 
-  <!-- PRICING CTA STRIP just below hero -->
+  <!-- PRICING STRIP -->
   <div class="price-strip">
     <div class="container">
       <div class="ps-inner">
         <div class="ps-left">
-          <span class="ps-free">🎮 Demo — <strong>FREE</strong></span>
-          <span class="ps-sep">|</span>
-          <span class="ps-live">💰 Live Trading — <strong>$20/month</strong></span>
+          <span>🎮 Demo — <strong>FREE</strong></span>
+          <span class="ps-div">|</span>
+          <span>💰 Live Trading — <strong>$20/month</strong></span>
         </div>
         <div class="ps-right">
-          <a href={GUMROAD_URL} target="_blank" rel="noopener" class="btn btn-outline">Get Live Access →</a>
-          <a href="/pricing" class="btn btn-secondary" style="font-size:13px;">Compare Plans</a>
+          <a href={GUMROAD_URL} target="_blank" rel="noopener" class="ps-btn-main">Get Live Access →</a>
+          <a href="/pricing" class="ps-btn-sec">Compare Plans</a>
         </div>
       </div>
     </div>
@@ -115,7 +128,7 @@ const reviews = [
     </div>
   </div>
 
-  <!-- ABOUT -->
+  <!-- ABOUT / QUOTEX BRANDING -->
   <section class="section">
     <div class="container">
       <div class="two-col">
@@ -123,7 +136,7 @@ const reviews = [
           <span class="badge badge-green">What is Quotex Bot?</span>
           <h2>Automate Your <span class="gradient-text">Quotex Trading</span> in Minutes</h2>
           <p>Quotex Bot is a powerful <strong>Chrome extension for QXBroker / Quotex</strong> that fully automates your binary options trading using the proven <strong>martingale strategy</strong>. Set your sequence, click Start, and let the bot do the rest.</p>
-          <p>Runs directly in your browser as a <strong>Chrome sidebar</strong> — no downloads, no VPS, no complicated setup. Works on demo completely free.</p>
+          <p>Runs directly in your browser as a <strong>Chrome sidebar extension</strong> — no downloads, no VPS, no complicated setup. Free on demo forever.</p>
           <ul class="tick-list">
             <li>✅ Works on demo account — 100% free</li>
             <li>✅ Live trading with $20/month subscription</li>
@@ -131,6 +144,15 @@ const reviews = [
             <li>✅ Compatible with all Quotex / QXBroker trading pairs</li>
             <li>✅ Supports USD, EUR, GBP, INR, PKR and all currencies</li>
           </ul>
+
+          <!-- QUOTEX BRANDING BADGE -->
+          <div class="quotex-badge">
+            <div class="qb-logo">
+              <svg width="28" height="28" viewBox="0 0 100 100"><defs><linearGradient id="qg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00c951"/><stop offset="100%" style="stop-color:#0088cc"/></linearGradient></defs><rect width="100" height="100" rx="20" fill="url(#qg)"/><text x="50" y="68" font-size="54" text-anchor="middle" font-family="Arial" fill="white" font-weight="bold">Q</text></svg>
+              <span><strong>Official Partner</strong><br/>Works with Quotex / QXBroker</span>
+            </div>
+            <a href="https://qxbroker.com" target="_blank" rel="noopener" class="qb-link">Open Quotex →</a>
+          </div>
         </div>
         <div class="tc-cards">
           <div class="mc"><div class="mc-i">🎮</div><h3>Demo Mode</h3><p>Practice with virtual money. Full features free on Quotex demo.</p></div>
@@ -142,7 +164,7 @@ const reviews = [
     </div>
   </section>
 
-  <!-- HOW TO BUY / GET STARTED -->
+  <!-- HOW TO GET STARTED -->
   <section class="section bg2" id="get-started">
     <div class="container">
       <div class="sec-hd">
@@ -153,13 +175,20 @@ const reviews = [
       <div class="gs-grid">
         <div class="gs-card">
           <div class="gs-num">01</div>
-          <div class="gs-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#00a651" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="#00a651"/><line x1="12" y1="2" x2="12" y2="8" stroke="#00a651" stroke-width="1.5"/><line x1="20.66" y1="17" x2="14.68" y2="14" stroke="#00a651" stroke-width="1.5"/><line x1="3.34" y1="17" x2="9.32" y2="14" stroke="#00a651" stroke-width="1.5"/></svg>
+          <div class="gs-ico">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" fill="#EA4335" opacity=".15"/>
+              <circle cx="12" cy="12" r="10" stroke="#4285F4" stroke-width="1.5" fill="none"/>
+              <circle cx="12" cy="12" r="4" fill="#4285F4"/>
+              <path d="M12 2 H21.5" stroke="#EA4335" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 2 L7.1 10.5" stroke="#FBBC04" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16.9 10.5 L7.1 10.5" stroke="#34A853" stroke-width="2" stroke-linecap="round"/>
+            </svg>
           </div>
           <h3>Install Chrome Extension</h3>
-          <p>Add Quotex Bot from the Chrome Web Store with one click. Completely free — no account required for demo mode.</p>
-          <a href={CHROME_URL} target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="currentColor"/><line x1="12" y1="2" x2="12" y2="8" stroke="currentColor" stroke-width="1.5"/><line x1="20.66" y1="17" x2="14.68" y2="14" stroke="currentColor" stroke-width="1.5"/><line x1="3.34" y1="17" x2="9.32" y2="14" stroke="currentColor" stroke-width="1.5"/></svg>
+          <p>Add Quotex Bot from the Chrome Web Store. Completely free — no account required for demo mode.</p>
+          <a href={CHROME_URL} target="_blank" rel="noopener" class="btn btn-primary gs-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="4" fill="white"/><path d="M12 2 H21.5" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M12 2 L7.1 10.5" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M16.9 10.5 L7.1 10.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
             Add to Chrome — Free
           </a>
           <div class="gs-note">✅ Works on demo immediately after install</div>
@@ -167,27 +196,25 @@ const reviews = [
 
         <div class="gs-card">
           <div class="gs-num">02</div>
-          <div class="gs-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#0070f3" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#0070f3" stroke-width="1.5"/><circle cx="17" cy="8" r="3" fill="#0070f3" opacity=".3"/><path d="M15.5 8l1 1 2-2" stroke="#0070f3" stroke-width="1.2"/></svg>
+          <div class="gs-ico">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#0070f3" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#0070f3" stroke-width="1.5"/><circle cx="16" cy="8" r="3" fill="rgba(0,112,243,0.15)" stroke="#0070f3" stroke-width="1.2"/><path d="M14.8 8.1l1 1 1.8-1.8" stroke="#0070f3" stroke-width="1.2"/></svg>
           </div>
           <h3>Buy Live Trading Access</h3>
-          <p>Want to trade with real money? Get the $20/month subscription via Gumroad. Use the same email in the extension to verify instantly.</p>
-          <a href={GUMROAD_URL} target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center;background:#0070f3;">
+          <p>Want to trade with real money? Get the $20/month subscription on Gumroad. Use same email in extension.</p>
+          <a href={GUMROAD_URL} target="_blank" rel="noopener" class="btn btn-blue gs-btn">
             💳 Buy on Gumroad — $20/mo
           </a>
-          <div class="gs-note">🎮 Or skip this — demo is fully free forever</div>
+          <div class="gs-note">🎮 Skip this — demo is fully free forever</div>
         </div>
 
         <div class="gs-card">
           <div class="gs-num">03</div>
-          <div class="gs-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#f59e0b" stroke-width="1.5" fill="rgba(245,158,11,0.1)"/></svg>
+          <div class="gs-ico">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#f59e0b" stroke-width="1.5" fill="rgba(245,158,11,0.12)"/></svg>
           </div>
           <h3>Start Auto Trading</h3>
-          <p>Open Quotex demo or live page. Open the sidebar, pick a preset strategy, configure your risk limits and click Start Trading!</p>
-          <a href="/how-it-works" class="btn btn-outline" style="margin-top:16px;width:100%;justify-content:center;">
-            📖 View Full Guide
-          </a>
+          <p>Open Quotex demo or live page, open sidebar, pick a preset, set risk limits and click Start Trading!</p>
+          <a href="/how-it-works" class="btn btn-outline gs-btn">📖 View Full Guide</a>
           <div class="gs-note">⚡ First trade executes in under 30 seconds</div>
         </div>
       </div>
@@ -221,13 +248,13 @@ const reviews = [
       <div class="sec-hd">
         <span class="badge badge-green">Strategy Presets</span>
         <h2>4 Built-in <span class="gradient-text">Martingale Presets</span></h2>
-        <p>Choose from ready-made presets or create your own custom strategy.</p>
+        <p>Choose from ready-made presets or create your own custom martingale strategy.</p>
       </div>
       <div class="presets-grid">
-        <div class="pc" style="border-color:#00a65133"><div class="pr" style="color:#00a651;background:#00a65118">Low Risk</div><h3 style="color:#00a651">Conservative</h3><p>Best for beginners. Small amounts, short sequence.</p><div class="pa"><span>Amounts:</span><code>1 → 2 → 4 → 8</code></div></div>
-        <div class="pc" style="border-color:#0070f333"><div class="pr" style="color:#0070f3;background:#0070f318">Medium Risk</div><h3 style="color:#0070f3">Balanced</h3><p>Most popular. 8-step double-up martingale.</p><div class="pa"><span>Amounts:</span><code>1 → 2 → 4 → 8 → 17 → 35 → 73 → 151</code></div></div>
-        <div class="pc" style="border-color:#f59e0b33"><div class="pr" style="color:#f59e0b;background:#f59e0b18">High Risk</div><h3 style="color:#f59e0b">Aggressive</h3><p>Triple-up martingale. Requires larger account.</p><div class="pa"><span>Amounts:</span><code>1 → 3 → 9 → 27 → 81 → 243...</code></div></div>
-        <div class="pc" style="border-color:#ef444433"><div class="pr" style="color:#ef4444;background:#ef444418">Very High Risk</div><h3 style="color:#ef4444">Turbo</h3><p>Extreme compounding for large accounts only.</p><div class="pa"><span>Amounts:</span><code>1 → 5 → 25 → 125 → 625...</code></div></div>
+        <div class="pc" style="border-color:#00a65133"><div class="pr" style="color:#00a651;background:#00a65112">Low Risk</div><h3 style="color:#00a651">Conservative</h3><p>Best for beginners. Small amounts, short sequence.</p><div class="pa"><span>Amounts:</span><code>1 → 2 → 4 → 8</code></div></div>
+        <div class="pc" style="border-color:#0070f333"><div class="pr" style="color:#0070f3;background:#0070f312">Medium Risk</div><h3 style="color:#0070f3">Balanced</h3><p>Most popular. 8-step double-up martingale.</p><div class="pa"><span>Amounts:</span><code>1 → 2 → 4 → 8 → 17 → 35 → 73 → 151</code></div></div>
+        <div class="pc" style="border-color:#f59e0b33"><div class="pr" style="color:#b45309;background:#f59e0b12">High Risk</div><h3 style="color:#b45309">Aggressive</h3><p>Triple-up martingale. Requires larger account.</p><div class="pa"><span>Amounts:</span><code>1 → 3 → 9 → 27 → 81 → 243...</code></div></div>
+        <div class="pc" style="border-color:#ef444433"><div class="pr" style="color:#ef4444;background:#ef444412">Very High Risk</div><h3 style="color:#ef4444">Turbo</h3><p>Extreme compounding for large accounts only.</p><div class="pa"><span>Amounts:</span><code>1 → 5 → 25 → 125 → 625...</code></div></div>
       </div>
     </div>
   </section>
@@ -237,37 +264,37 @@ const reviews = [
     <div class="container">
       <div class="sec-hd">
         <span class="badge badge-blue">📺 Video Tutorials</span>
-        <h2>Learn Quotex Bot in <span class="gradient-text">Video Tutorials</span></h2>
-        <p>Watch our complete playlist covering everything from installation to advanced strategies. Free on YouTube.</p>
+        <h2>Learn Quotex Bot on <span class="gradient-text">YouTube</span></h2>
+        <p>Watch our complete tutorial playlist — from installation to advanced strategies. Everything free on YouTube.</p>
       </div>
-      <div class="yt-grid">
-        <!-- Replace these YouTube IDs with your real video IDs -->
-        <div class="yt-card">
-          <div class="yt-thumb">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=PLxxxxxxxxxxxxxxx" title="Quotex Bot Complete Tutorial Playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="yt-layout">
+        <div class="yt-main-card">
+          <div class="yt-embed">
+            <iframe
+              src={`https://www.youtube.com/embed/${mainVideo.id}?list=PL-DfyZg6D8FkGX8t4j_NyGqKCGUIl9sAW`}
+              title={mainVideo.title}
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </div>
-          <div class="yt-info">
-            <span class="badge badge-blue">Full Playlist</span>
-            <h3>Quotex Bot — Complete Tutorial Series</h3>
-            <p>Installation, configuration, strategy setup, live trading demo and advanced tips. Everything in one playlist.</p>
-            <a href={YT_PLAYLIST} target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top:12px;">
-              ▶ Watch Full Playlist
+          <div class="yt-main-info">
+            <span class="badge badge-blue">🎬 Featured Video</span>
+            <h3>{mainVideo.title}</h3>
+            <p>{mainVideo.desc}</p>
+            <a href={YT_PLAYLIST} target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top:14px;">
+              📺 Watch Full Playlist ({videos.length} Videos)
             </a>
           </div>
         </div>
-        <div class="yt-side">
-          {[
-            { title: "How to Install Quotex Bot", desc: "Step-by-step installation guide", id: "dQw4w9WgXcQ" },
-            { title: "Martingale Strategy Explained", desc: "Complete martingale tutorial", id: "dQw4w9WgXcQ" },
-            { title: "Compounding Mode Guide", desc: "How to grow your account faster", id: "dQw4w9WgXcQ" },
-            { title: "Live Trading Demo", desc: "Real account trading session", id: "dQw4w9WgXcQ" },
-          ].map(v => (
-            <a href={`https://www.youtube.com/watch?v=${v.id}`} target="_blank" rel="noopener" class="yt-mini">
-              <div class="yt-mini-thumb">
-                <img src={`https://img.youtube.com/vi/${v.id}/mqdefault.jpg`} alt={v.title} loading="lazy"/>
-                <div class="yt-play">▶</div>
+        <div class="yt-list">
+          {videos.slice(0, 7).map(v => (
+            <a href={`https://www.youtube.com/watch?v=${v.id}&list=PL-DfyZg6D8FkGX8t4j_NyGqKCGUIl9sAW`} target="_blank" rel="noopener" class="yt-item">
+              <div class="yt-thumb-wrap">
+                <img src={`https://img.youtube.com/vi/${v.id}/mqdefault.jpg`} alt={v.title} loading="lazy" width="120" height="68"/>
+                <div class="yt-play-btn">▶</div>
               </div>
-              <div class="yt-mini-info">
+              <div class="yt-item-info">
                 <strong>{v.title}</strong>
                 <span>{v.desc}</span>
               </div>
@@ -282,17 +309,17 @@ const reviews = [
   <section class="section bg2">
     <div class="container">
       <div class="sec-hd">
-        <span class="badge badge-green">Real Users</span>
+        <span class="badge badge-green">⭐ Real Users</span>
         <h2>What Traders Say About <span class="gradient-text">Quotex Bot</span></h2>
       </div>
       <div class="reviews-grid">
         {reviews.map(r => (
           <div class="rv-card">
             <div class="rv-top">
-              <div class="rv-avatar" style={`background:${r.color}`}>{r.avatar}</div>
-              <div class="rv-info">
-                <div class="rv-name">{r.name} <span class="rv-flag">{r.flag}</span></div>
-                <div class="rv-country">{r.country}</div>
+              <div class="rv-av" style={`background:${r.color}`}>{r.avatar}</div>
+              <div class="rv-meta">
+                <div class="rv-name">{r.name} <span>{r.flag}</span></div>
+                <div class="rv-loc">{r.country}</div>
               </div>
               <div class="rv-stars">{"⭐".repeat(r.rating)}</div>
             </div>
@@ -307,12 +334,12 @@ const reviews = [
   <section class="cta-sec">
     <div class="container">
       <div class="cta-inner">
-        <p class="cta-eye">🚀 Ready to Automate?</p>
+        <p class="cta-eye">🚀 Ready to Automate Your Trading?</p>
         <h2>Start Trading Automatically<br/><span class="gradient-text">100% Free on Demo</span></h2>
-        <p>Join thousands of traders automating their Quotex martingale strategy. No credit card needed for demo.</p>
+        <p>Join thousands of traders automating their Quotex martingale strategy. No credit card needed for demo mode.</p>
         <div class="cta-btns">
           <a href={CHROME_URL} target="_blank" rel="noopener" class="btn btn-primary btn-hero">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="currentColor"/><line x1="12" y1="2" x2="12" y2="8" stroke="currentColor" stroke-width="1.5"/><line x1="20.66" y1="17" x2="14.68" y2="14" stroke="currentColor" stroke-width="1.5"/><line x1="3.34" y1="17" x2="9.32" y2="14" stroke="currentColor" stroke-width="1.5"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="4" fill="white"/><path d="M12 2 H21.5" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M12 2 L7.1 10.5" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M16.9 10.5 L7.1 10.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
             Add to Chrome — Free
           </a>
           <a href={GUMROAD_URL} target="_blank" rel="noopener" class="btn btn-outline">💰 Get Live Access — $20/mo</a>
@@ -332,158 +359,162 @@ const reviews = [
 
 <style is:global>
 /* HERO */
-.hero{position:relative;padding:96px 0 72px;overflow:hidden;}
+.hero{position:relative;padding:100px 0 80px;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(0,166,81,0.04) 0%,rgba(0,112,243,0.04) 100%);}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
-.hero-left h1{font-size:clamp(30px,4.5vw,52px);font-weight:800;line-height:1.1;margin-bottom:20px;color:var(--text);}
-.hero-desc{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:28px;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
-.btn-hero{font-size:15px!important;padding:14px 26px!important;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+.hero-left h1{font-size:clamp(32px,4.5vw,56px);font-weight:800;line-height:1.1;margin-bottom:22px;color:var(--text);}
+.hero-desc{font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:30px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px;}
+.btn-hero{font-size:16px!important;padding:15px 28px!important;}
+.chrome-svg{width:18px;height:18px;flex-shrink:0;}
 .hero-note{font-size:13px;color:var(--muted);}
 
 /* BOT CARD */
-.bot-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;font-size:13px;box-shadow:var(--shadow-lg);}
-.bc-header{display:flex;align-items:center;gap:6px;padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px;font-size:12px;color:var(--muted);}
-.dot{width:10px;height:10px;border-radius:50%;}
+.bot-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px;font-size:14px;box-shadow:var(--shadow-lg);}
+.bc-hdr{display:flex;align-items:center;gap:7px;padding-bottom:14px;border-bottom:1px solid var(--border);margin-bottom:14px;font-size:13px;color:var(--muted);}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block;}
 .dot.r{background:#ff5f57;}.dot.y{background:#febc2e;}.dot.g{background:#28c840;}
-.bc-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
-.bcs{padding:8px 10px;border-radius:8px;font-size:12px;font-weight:600;background:var(--bg2);border:1px solid var(--border);color:var(--muted);}
+.bc-title{margin-left:4px;font-weight:500;}
+.bc-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:11px;}
+.bcs{padding:9px 11px;border-radius:8px;font-size:13px;font-weight:600;background:var(--bg2);border:1px solid var(--border);color:var(--muted);}
 .bcs.green{background:rgba(0,166,81,0.08);border-color:rgba(0,166,81,0.2);color:var(--accent);}
 .bcs.red{background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.2);color:var(--red);}
 .bcs.blue{background:rgba(0,112,243,0.08);border-color:rgba(0,112,243,0.2);color:var(--accent2);}
-.bc-active{padding:10px 14px;border-radius:8px;font-weight:700;font-size:13px;background:rgba(0,166,81,0.08);color:var(--accent);border:1px solid rgba(0,166,81,0.2);margin-bottom:10px;}
-.bc-seq{margin-bottom:10px;}
-.seq-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
-.seq-s{display:flex;gap:8px;}
-.ss{padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;background:var(--bg2);border:1px solid var(--border);color:var(--muted);}
+.bc-active{padding:11px 14px;border-radius:8px;font-weight:700;font-size:14px;background:rgba(0,166,81,0.08);color:var(--accent);border:1px solid rgba(0,166,81,0.2);margin-bottom:11px;}
+.bc-seq{margin-bottom:11px;}
+.seq-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:9px;font-weight:600;}
+.seq-row{display:flex;gap:8px;}
+.ss{padding:7px 13px;border-radius:7px;font-size:13px;font-weight:600;background:var(--bg2);border:1px solid var(--border);color:var(--muted);}
 .ss.done{background:rgba(0,166,81,0.08);border-color:rgba(0,166,81,0.3);color:var(--accent);}
 .ss.curr{background:rgba(0,112,243,0.1);border-color:rgba(0,112,243,0.3);color:var(--accent2);}
-.bc-ctrls{display:flex;flex-direction:column;gap:6px;margin-bottom:10px;}
-.bcc{padding:7px 12px;border-radius:6px;font-size:12px;background:var(--bg2);border:1px solid var(--border);color:var(--muted);}
+.bc-ctrls{display:flex;flex-direction:column;gap:7px;margin-bottom:11px;}
+.bcc{padding:8px 13px;border-radius:7px;font-size:13px;background:var(--bg2);border:1px solid var(--border);color:var(--muted);}
 .bcc.g{border-color:rgba(0,166,81,0.2);color:var(--accent);}
 .bcc.r{border-color:rgba(239,68,68,0.2);color:var(--red);}
 .bcc.b{border-color:rgba(0,112,243,0.2);color:var(--accent2);}
-.bc-pulse{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;background:rgba(0,166,81,0.06);border:1px solid rgba(0,166,81,0.15);font-size:12px;color:var(--accent);}
-.pd{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;animation:pulse 1.5s ease-in-out infinite;}
+.bc-pulse{display:flex;align-items:center;gap:10px;padding:9px 13px;border-radius:8px;background:rgba(0,166,81,0.06);border:1px solid rgba(0,166,81,0.15);font-size:13px;color:var(--accent);}
+.pd{width:9px;height:9px;border-radius:50%;background:var(--accent);flex-shrink:0;animation:pulse 1.5s ease-in-out infinite;}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.6}}
 
 /* PRICE STRIP */
-.price-strip{background:var(--text);padding:14px 0;}
+.price-strip{background:#0f172a;padding:16px 0;}
 .ps-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
-.ps-left{display:flex;align-items:center;gap:16px;color:#fff;font-size:15px;flex-wrap:wrap;}
-.ps-free{color:rgba(255,255,255,0.8);}
-.ps-live{color:rgba(255,255,255,0.8);}
-.ps-sep{color:rgba(255,255,255,0.3);}
+.ps-left{display:flex;align-items:center;gap:18px;color:rgba(255,255,255,0.75);font-size:15px;flex-wrap:wrap;}
 .ps-left strong{color:#fff;}
+.ps-div{color:rgba(255,255,255,0.2);}
 .ps-right{display:flex;gap:10px;flex-wrap:wrap;}
-.ps-right .btn-outline{color:#fff;border-color:rgba(255,255,255,0.4);}
-.ps-right .btn-outline:hover{background:rgba(255,255,255,0.1);border-color:#fff;}
-.ps-right .btn-secondary{color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2);background:transparent;font-size:13px;padding:8px 16px;}
-.ps-right .btn-secondary:hover{color:#fff;border-color:rgba(255,255,255,0.5);}
+.ps-btn-main{display:inline-flex;align-items:center;padding:10px 20px;border-radius:8px;background:var(--accent);color:#fff;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:all .2s;}
+.ps-btn-main:hover{background:#008a43;}
+.ps-btn-sec{display:inline-flex;align-items:center;padding:10px 20px;border-radius:8px;background:transparent;color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .2s;}
+.ps-btn-sec:hover{color:#fff;border-color:rgba(255,255,255,0.4);}
 
-/* STATS */
-.stats-bar{padding:48px 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+/* STATS BAR */
+.stats-bar{padding:52px 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-.si{text-align:center;padding:28px 16px;border-radius:12px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);}
-.sv{font-family:var(--font-display);font-size:32px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.sl{font-size:13px;color:var(--muted);margin-top:6px;}
+.si{text-align:center;padding:30px 16px;border-radius:14px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);}
+.sv{font-family:var(--font-display);font-size:34px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sl{font-size:14px;color:var(--muted);margin-top:8px;}
 
 /* ABOUT */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-.tc-text h2{font-size:clamp(24px,3.5vw,40px);margin:14px 0 16px;}
-.tc-text p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:14px;}
-.tick-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.tick-list li{font-size:14px;color:var(--muted);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.tc-text h2{font-size:clamp(26px,3.5vw,42px);margin:16px 0 18px;}
+.tc-text p{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:16px;}
+.tick-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px;}
+.tick-list li{font-size:15px;color:var(--muted);}
+.quotex-badge{display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border:1.5px solid var(--border);border-radius:12px;padding:16px 20px;gap:16px;flex-wrap:wrap;}
+.qb-logo{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted);line-height:1.5;}
+.qb-logo strong{color:var(--text);font-size:15px;}
+.qb-link{font-size:14px;font-weight:600;color:var(--accent);white-space:nowrap;}
 .tc-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.mc{padding:20px;border-radius:12px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);transition:all .2s;}
+.mc{padding:22px;border-radius:12px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);transition:all .2s;}
 .mc:hover,.mc.hl{border-color:var(--accent);box-shadow:0 4px 20px rgba(0,166,81,0.1);}
-.mc-i{font-size:24px;margin-bottom:10px;}
-.mc h3{font-size:15px;font-weight:700;margin-bottom:6px;color:var(--text);}
-.mc p{font-size:13px;color:var(--muted);line-height:1.6;}
+.mc-i{font-size:26px;margin-bottom:12px;}
+.mc h3{font-size:16px;font-weight:700;margin-bottom:8px;color:var(--text);}
+.mc p{font-size:14px;color:var(--muted);line-height:1.65;}
 
 /* GET STARTED */
-.gs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.gs-card{padding:36px 28px;border-radius:16px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);text-align:center;}
-.gs-num{font-family:var(--font-display);font-size:48px;font-weight:900;color:rgba(0,166,81,0.12);line-height:1;margin-bottom:12px;}
-.gs-icon{margin-bottom:16px;display:flex;justify-content:center;}
-.gs-card h3{font-size:18px;font-weight:700;margin-bottom:10px;color:var(--text);}
-.gs-card p{font-size:14px;color:var(--muted);line-height:1.7;}
-.gs-note{font-size:12px;color:var(--accent);margin-top:10px;background:rgba(0,166,81,0.06);padding:6px 10px;border-radius:6px;}
+.gs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.gs-card{padding:40px 30px;border-radius:18px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);text-align:center;}
+.gs-num{font-family:var(--font-display);font-size:52px;font-weight:900;color:rgba(0,166,81,0.1);line-height:1;margin-bottom:14px;}
+.gs-ico{margin-bottom:18px;display:flex;justify-content:center;}
+.gs-card h3{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--text);}
+.gs-card p{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:0;}
+.gs-btn{width:100%;justify-content:center;margin-top:20px;}
+.gs-note{font-size:13px;color:var(--accent);margin-top:12px;background:rgba(0,166,81,0.07);padding:8px 12px;border-radius:7px;}
 
 /* FEATURES */
-.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.feat-card{padding:24px 20px;border-radius:12px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);transition:all .2s;}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.feat-card{padding:26px 22px;border-radius:14px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);transition:all .2s;}
 .feat-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-md);}
-.fi{font-size:28px;margin-bottom:12px;}
-.feat-card h3{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--text);}
-.feat-card p{font-size:13px;color:var(--muted);line-height:1.6;}
+.fi{font-size:30px;margin-bottom:14px;}
+.feat-card h3{font-size:16px;font-weight:700;margin-bottom:10px;color:var(--text);}
+.feat-card p{font-size:14px;color:var(--muted);line-height:1.65;}
 
 /* PRESETS */
-.presets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.pc{padding:22px;border-radius:12px;background:#fff;border:2px solid transparent;box-shadow:var(--shadow);}
-.pr{display:inline-block;padding:4px 10px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.5px;margin-bottom:10px;}
-.pc h3{font-size:17px;font-weight:700;margin-bottom:8px;}
-.pc p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
-.pa span{font-size:11px;color:var(--muted);display:block;margin-bottom:4px;}
-.pa code{color:var(--accent2);background:rgba(0,112,243,0.06);padding:4px 8px;border-radius:4px;display:block;font-size:12px;word-break:break-all;border:1px solid rgba(0,112,243,0.15);}
+.presets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.pc{padding:24px;border-radius:14px;background:#fff;border:2px solid transparent;box-shadow:var(--shadow);}
+.pr{display:inline-block;padding:5px 12px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:.4px;margin-bottom:12px;}
+.pc h3{font-size:18px;font-weight:700;margin-bottom:10px;}
+.pc p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
+.pa span{font-size:12px;color:var(--muted);display:block;margin-bottom:6px;font-weight:600;}
+.pa code{color:var(--accent2);background:rgba(0,112,243,0.06);padding:5px 10px;border-radius:6px;display:block;font-size:13px;word-break:break-all;border:1px solid rgba(0,112,243,0.15);}
 
 /* YOUTUBE */
-.yt-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
-.yt-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
-.yt-thumb{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
-.yt-thumb iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.yt-info{padding:24px;}
-.yt-info .badge{margin-bottom:12px;}
-.yt-info h3{font-size:18px;font-weight:700;margin:10px 0 10px;color:var(--text);}
-.yt-info p{font-size:14px;color:var(--muted);line-height:1.7;}
-.yt-side{display:flex;flex-direction:column;gap:12px;}
-.yt-mini{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;padding:8px;box-shadow:var(--shadow);transition:all .2s;}
-.yt-mini:hover{border-color:var(--accent2);transform:translateX(2px);}
-.yt-mini-thumb{position:relative;width:110px;flex-shrink:0;border-radius:6px;overflow:hidden;}
-.yt-mini-thumb img{width:110px;height:62px;object-fit:cover;display:block;}
-.yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.4);color:#fff;font-size:18px;}
-.yt-mini-info{flex:1;min-width:0;}
-.yt-mini-info strong{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.yt-mini-info span{font-size:12px;color:var(--muted);}
+.yt-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:start;}
+.yt-main-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-md);}
+.yt-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
+.yt-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.yt-main-info{padding:24px;}
+.yt-main-info .badge{margin-bottom:12px;}
+.yt-main-info h3{font-size:19px;font-weight:700;margin:12px 0 10px;color:var(--text);}
+.yt-main-info p{font-size:15px;color:var(--muted);line-height:1.7;}
+.yt-list{display:flex;flex-direction:column;gap:10px;max-height:500px;overflow-y:auto;}
+.yt-item{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:10px;padding:10px;box-shadow:var(--shadow);transition:all .2s;cursor:pointer;}
+.yt-item:hover{border-color:var(--accent2);transform:translateX(2px);}
+.yt-thumb-wrap{position:relative;width:108px;flex-shrink:0;border-radius:7px;overflow:hidden;}
+.yt-thumb-wrap img{width:108px;height:62px;object-fit:cover;display:block;}
+.yt-play-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);color:#fff;font-size:16px;}
+.yt-item-info{flex:1;min-width:0;}
+.yt-item-info strong{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.4;}
+.yt-item-info span{font-size:12px;color:var(--muted);}
 
 /* REVIEWS */
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.rv-card{padding:24px;border-radius:12px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);}
-.rv-top{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
-.rv-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;flex-shrink:0;}
-.rv-info{flex:1;}
-.rv-name{font-weight:700;font-size:14px;color:var(--text);}
-.rv-flag{margin-left:4px;}
-.rv-country{font-size:12px;color:var(--muted);}
-.rv-stars{font-size:12px;flex-shrink:0;}
-.rv-card p{font-size:13px;color:var(--muted);line-height:1.7;font-style:italic;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.rv-card{padding:26px;border-radius:14px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);}
+.rv-top{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+.rv-av{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;flex-shrink:0;}
+.rv-meta{flex:1;}
+.rv-name{font-weight:700;font-size:15px;color:var(--text);}
+.rv-loc{font-size:13px;color:var(--muted);margin-top:2px;}
+.rv-stars{font-size:13px;flex-shrink:0;}
+.rv-card p{font-size:14px;color:var(--muted);line-height:1.75;font-style:italic;}
 
 /* CTA */
-.cta-sec{padding:96px 0;background:linear-gradient(135deg,rgba(0,166,81,0.04),rgba(0,112,243,0.04));border-top:1px solid var(--border);}
+.cta-sec{padding:100px 0;background:linear-gradient(135deg,rgba(0,166,81,0.05),rgba(0,112,243,0.05));border-top:1px solid var(--border);}
 .cta-inner{text-align:center;}
-.cta-eye{font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;}
-.cta-inner h2{font-size:clamp(24px,4vw,44px);margin-bottom:14px;}
-.cta-inner>p{color:var(--muted);font-size:16px;margin-bottom:32px;}
-.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
-.cta-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;}
-.cta-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.cta-eye{font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+.cta-inner h2{font-size:clamp(26px,4vw,46px);margin-bottom:16px;}
+.cta-inner>p{color:var(--muted);font-size:17px;margin-bottom:36px;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+.cta-links{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;}
+.cta-links a{font-size:15px;color:var(--muted);transition:color .2s;}
 .cta-links a:hover{color:var(--accent);}
 
 /* RESPONSIVE */
 @media(max-width:1100px){
   .feat-grid{grid-template-columns:repeat(2,1fr);}
   .presets-grid{grid-template-columns:repeat(2,1fr);}
-  .yt-grid{grid-template-columns:1fr;}
+  .yt-layout{grid-template-columns:1fr;}
 }
 @media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr;gap:40px;}
+  .hero-grid{grid-template-columns:1fr;gap:44px;}
   .hero-right{order:-1;}
   .stats-grid{grid-template-columns:repeat(2,1fr);}
-  .two-col{grid-template-columns:1fr;gap:36px;}
+  .two-col{grid-template-columns:1fr;gap:40px;}
   .gs-grid{grid-template-columns:1fr;}
   .reviews-grid{grid-template-columns:repeat(2,1fr);}
-  .ps-inner{flex-direction:column;align-items:flex-start;gap:12px;}
+  .ps-inner{flex-direction:column;align-items:flex-start;gap:14px;}
 }
 @media(max-width:640px){
   .feat-grid{grid-template-columns:1fr;}
