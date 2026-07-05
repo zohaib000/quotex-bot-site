@@ -7,65 +7,38 @@ export interface Props {
   schema?: object;
   keywords?: string;
 }
-
-const {
-  title,
-  description,
-  canonical = Astro.url.href,
-  ogImage = '/og-image.jpg',
-  schema,
-  keywords = 'quotex bot, quotex trading bot, quotex martingale bot, quotex auto trading, binary options bot'
-} = Astro.props;
-
+const { title, description, canonical = Astro.url.href, ogImage = '/og-image.jpg', schema, keywords = 'quotex bot, quotex trading bot, quotex martingale bot, quotex auto trading, binary options bot' } = Astro.props;
 const fullTitle = title.includes('Quotex Bot') ? title : `${title} | Quotex Bot`;
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{fullTitle}</title>
-  <meta name="description" content={description} />
-  <meta name="keywords" content={keywords} />
-  <meta name="author" content="Quotex Bot" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <link rel="canonical" href={canonical} />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={fullTitle} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url" content={canonical} />
-  <meta property="og:image" content={ogImage} />
-  <meta property="og:site_name" content="Quotex Bot" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={fullTitle} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImage} />
-
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="stylesheet" href="/global.css" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Quotex Bot",
-    "url": "https://quotexbot.com",
-    "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "url": "https://wa.me/+923064200589" }
-  }
-  </script>
+  <meta name="description" content={description}/>
+  <meta name="keywords" content={keywords}/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+  <link rel="canonical" href={canonical}/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content={fullTitle}/>
+  <meta property="og:description" content={description}/>
+  <meta property="og:url" content={canonical}/>
+  <meta property="og:image" content={ogImage}/>
+  <meta property="og:site_name" content="Quotex Bot"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content={fullTitle}/>
+  <meta name="twitter:description" content={description}/>
+  <meta name="twitter:image" content={ogImage}/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="stylesheet" href="/global.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)}/>}
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Quotex Bot","url":"https://quotexbot.com","logo":"https://quotexbot.com/favicon.svg","contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://wa.me/+923064200589"}}</script>
 </head>
 <body>
-  <slot />
+  <slot/>
 </body>
 </html>

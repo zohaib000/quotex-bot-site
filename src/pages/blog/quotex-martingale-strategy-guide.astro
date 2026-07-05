@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -161,9 +162,10 @@ const schema = {
   </article>
 
   <Footer />
+  <WhatsAppFloat />
 </Layout>
 
-<style>
+<style is:global>
 .blog-article { padding: 60px 0 100px; }
 .blog-container { max-width: 800px; }
 .article-header { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }

@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":"Setting Take Profit and Stop Loss on Quotex Bot 2026","datePublished":"2026-05-15","author":{"@type":"Organization","name":"QuotexBot"}};
+---
+<Layout title="Take Profit and Stop Loss on Quotex Bot — Risk Management Guide 2026" description="Learn how to use the automated take profit and stop loss features in Quotex Bot for better risk management and consistent trading sessions on QXBroker." keywords="quotex take profit, quotex stop loss, quotex bot risk management, quotex auto stop, binary options take profit, qxbroker stop loss, quotex trading risk management, quotex bot stop loss" schema={schema}>
+  <Header/>
+  <article class="blog-art">
+    <div class="container blog-wrap">
+      <header class="art-hdr">
+        <div class="art-meta"><span class="badge badge-blue">Risk Management</span><span class="art-date">May 15, 2026 · 5 min read</span></div>
+        <h1>Setting Take Profit and Stop Loss on Quotex Bot</h1>
+        <p class="art-lead">Proper risk management is the difference between consistent trading and blowing your account. Quotex Bot's automated Take Profit, Stop Loss and Timer features let you set clear boundaries for every trading session.</p>
+      </header>
+      <div class="art-body">
+        <h2>Why Risk Management Matters in Martingale Trading</h2>
+        <p>The martingale strategy is powerful but can lead to rapid losses if a losing streak exceeds your sequence length. Without Take Profit and Stop Loss, traders often fall into the trap of "just one more trade" — which can turn small losses into account-destroying sessions.</p>
+        <p>Quotex Bot's auto-stop features remove emotion from the equation. Once you set your limits, the bot enforces them automatically — no second-guessing.</p>
+        <div class="callout info"><strong>💡 Important:</strong> Both Take Profit and Stop Loss in Quotex Bot are based on NET profit/loss — that's wins minus losses. This gives you the true picture of your session performance.</div>
+        <h2>Take Profit — Stop When You're Winning</h2>
+        <p>Take Profit automatically stops the bot when your session net profit reaches your target. For example, if you set Take Profit at $50, the bot stops and shows an alert the moment your net profit hits $50.</p>
+        <h3>How to Set Take Profit</h3>
+        <ul class="art-list">
+          <li>In the sidebar, check the ✅ <strong>Take profit at</strong> checkbox</li>
+          <li>Enter your target profit amount (e.g. 50)</li>
+          <li>Start trading — bot stops automatically when net profit reaches your target</li>
+        </ul>
+        <h3>Recommended Take Profit Settings</h3>
+        <ul class="art-list">
+          <li><strong>Conservative:</strong> 10-20% of account balance per session</li>
+          <li><strong>Balanced:</strong> 20-30% of account balance per session</li>
+          <li><strong>Aggressive:</strong> 30-50% of account balance per session</li>
+        </ul>
+        <h2>Stop Loss — Protect Your Account</h2>
+        <p>Stop Loss automatically stops the bot when your session net loss reaches your limit. This is your most important protection — it ensures one bad session doesn't devastate your account.</p>
+        <h3>How to Set Stop Loss</h3>
+        <ul class="art-list">
+          <li>In the sidebar, check the 🛑 <strong>Stop loss at</strong> checkbox</li>
+          <li>Enter your maximum loss amount (e.g. 20)</li>
+          <li>Start trading — bot stops automatically if net loss reaches your limit</li>
+        </ul>
+        <h3>Recommended Stop Loss Settings</h3>
+        <ul class="art-list">
+          <li><strong>Conservative:</strong> 5-10% of account balance per session</li>
+          <li><strong>Balanced:</strong> 10-15% of account balance per session</li>
+          <li><strong>Never risk more than 20%</strong> of your account in a single session</li>
+        </ul>
+        <h2>Timer Stop — Control Session Duration</h2>
+        <p>The Timer feature stops the bot after a set number of minutes. This is useful for disciplined trading — you trade for a fixed window then step away, regardless of results.</p>
+        <ul class="art-list">
+          <li>Check the ⏰ <strong>Stop after</strong> checkbox</li>
+          <li>Enter minutes (e.g. 30 for a 30-minute session)</li>
+          <li>Live countdown appears on the trading page</li>
+          <li>Bot stops automatically when timer runs out</li>
+        </ul>
+        <h2>Combining All Three — The Complete Risk Setup</h2>
+        <p>For maximum protection, use all three together. Whichever condition triggers first stops the bot:</p>
+        <div class="risk-example">
+          <div class="re-item"><span class="re-icon">🎯</span><div><strong>Take Profit: $30</strong><p>Stop when I've made $30 net profit this session</p></div></div>
+          <div class="re-item"><span class="re-icon">🛑</span><div><strong>Stop Loss: $15</strong><p>Stop if net loss reaches $15 this session</p></div></div>
+          <div class="re-item"><span class="re-icon">⏰</span><div><strong>Timer: 45 min</strong><p>Stop after 45 minutes regardless of results</p></div></div>
+        </div>
+        <p>This setup gives you a 2:1 reward-to-risk ratio and limits session duration. Perfect for disciplined, sustainable trading.</p>
+        <div class="callout warning"><strong>⚠️ Remember:</strong> These settings reset when you click Start Trading again. Always double-check your risk settings before each session, especially when switching between demo and live accounts.</div>
+        <div class="art-cta"><h3>Try Risk Management Features Free</h3><p>All Take Profit, Stop Loss and Timer features are available free on Quotex demo account.</p><a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf" target="_blank" rel="noopener" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg> Add to Chrome — Free</a></div>
+        <div class="art-nav"><a href="/blog/quotex-compounding-strategy" class="btn btn-secondary">← Compounding Guide</a><a href="/blog" class="btn btn-secondary">All Articles →</a></div>
+      </div>
+    </div>
+  </article>
+  <Footer/><WhatsAppFloat/>
+</Layout>
+<style is:global>
+.risk-example{display:flex;flex-direction:column;gap:12px;margin:20px 0;}.re-item{display:flex;gap:16px;align-items:flex-start;padding:16px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);}.re-icon{font-size:24px;flex-shrink:0;}.re-item strong{display:block;font-size:15px;margin-bottom:4px;color:var(--text);}.re-item p{font-size:13px;color:var(--muted);}
+</style>

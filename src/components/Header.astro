@@ -9,91 +9,53 @@ const navLinks = [
 ];
 const currentPath = Astro.url.pathname;
 ---
-
-<header class="header">
-  <div class="container header-inner">
+<header class="hdr">
+  <div class="container hdr-inner">
     <a href="/" class="logo">
-      <span>🤖</span>
-      <span>Quotex<span class="logo-accent">Bot</span></span>
+      <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00a651"/><stop offset="100%" style="stop-color:#0070f3"/></linearGradient></defs>
+        <rect width="100" height="100" rx="22" fill="url(#lg)"/>
+        <text x="50" y="68" font-size="56" text-anchor="middle" font-family="Arial,sans-serif" fill="white" font-weight="bold">Q</text>
+      </svg>
+      <span>Quotex<strong>Bot</strong></span>
     </a>
-
-    <nav class="nav" aria-label="Main navigation">
-      {navLinks.map(link => (
-        <a href={link.href} class={`nav-link ${currentPath === link.href ? 'active' : ''}`}>
-          {link.label}
-        </a>
-      ))}
+    <nav class="nav">
+      {navLinks.map(l => <a href={l.href} class={`nl ${currentPath===l.href?'active':''}`}>{l.label}</a>)}
     </nav>
-
-    <div class="header-cta">
-      <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf"
-         target="_blank" rel="noopener" class="btn btn-primary">
-        🚀 Add to Chrome — Free
+    <div class="hdr-cta">
+      <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/><circle cx="12" cy="12" r="3" fill="white"/></svg>
+        Add to Chrome
       </a>
     </div>
-
-    <button class="menu-btn" aria-label="Open menu" id="menuBtn">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="mbtn" id="mbtn" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
-
-  <div class="mobile-menu" id="mobileMenu">
-    {navLinks.map(link => (
-      <a href={link.href} class="mobile-link">{link.label}</a>
-    ))}
-    <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf"
-       target="_blank" rel="noopener"
-       class="btn btn-primary" style="justify-content:center;">
-      🚀 Add to Chrome — Free
+  <div class="mmenu" id="mmenu">
+    {navLinks.map(l => <a href={l.href} class="ml">{l.label}</a>)}
+    <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+      Add to Chrome
     </a>
   </div>
 </header>
-
-<style>
-.header {
-  position: sticky; top: 0; z-index: 100; width: 100%;
-  background: rgba(5,8,16,0.95);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-}
-.header-inner {
-  display: flex; align-items: center;
-  justify-content: space-between;
-  height: 64px; gap: 16px;
-}
-.logo {
-  display: flex; align-items: center; gap: 8px;
-  font-family: var(--font-display); font-size: 18px; font-weight: 700;
-  flex-shrink: 0; white-space: nowrap;
-}
-.logo-accent { color: var(--accent); }
-.nav { display: flex; align-items: center; gap: 2px; flex: 1; justify-content: center; }
-.nav-link {
-  padding: 6px 12px; border-radius: 6px; font-size: 14px;
-  font-weight: 500; color: var(--muted); transition: all .2s; white-space: nowrap;
-}
-.nav-link:hover, .nav-link.active { color: var(--text); background: var(--card); }
-.header-cta { flex-shrink: 0; }
-.menu-btn {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 8px; flex-shrink: 0;
-}
-.menu-btn span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
-.mobile-menu {
-  display: none; flex-direction: column; gap: 4px;
-  padding: 12px 24px 16px; border-top: 1px solid var(--border);
-}
-.mobile-link {
-  padding: 10px 14px; border-radius: 8px; font-weight: 500;
-  color: var(--muted); transition: all .2s;
-}
-.mobile-link:hover { color: var(--text); background: var(--card); }
-.mobile-menu.open { display: flex; }
-@media (max-width: 960px) { .nav, .header-cta { display: none; } .menu-btn { display: flex; } }
+<style is:global>
+.hdr { position:sticky; top:0; z-index:100; width:100%; background:rgba(255,255,255,0.97); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+.hdr-inner { display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px; }
+.logo { display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-size:18px; font-weight:500; color:var(--text); flex-shrink:0; }
+.logo strong { color:var(--accent); font-weight:700; }
+.nav { display:flex; align-items:center; gap:2px; flex:1; justify-content:center; }
+.nl { padding:7px 13px; border-radius:7px; font-size:14px; font-weight:500; color:var(--muted); transition:all .2s; }
+.nl:hover,.nl.active { color:var(--text); background:var(--bg2); }
+.hdr-cta { flex-shrink:0; }
+.mbtn { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; flex-shrink:0; }
+.mbtn span { display:block; width:22px; height:2px; background:var(--text); border-radius:2px; }
+.mmenu { display:none; flex-direction:column; gap:4px; padding:12px 24px 16px; border-top:1px solid var(--border); background:var(--bg); }
+.ml { padding:10px 14px; border-radius:8px; font-weight:500; color:var(--muted); transition:all .2s; }
+.ml:hover { color:var(--text); background:var(--bg2); }
+.mmenu.open { display:flex; }
+@media(max-width:960px){.nav,.hdr-cta{display:none;}.mbtn{display:flex;}}
 </style>
-
 <script>
-const btn = document.getElementById('menuBtn');
-const menu = document.getElementById('mobileMenu');
-btn?.addEventListener('click', () => menu?.classList.toggle('open'));
+const b=document.getElementById('mbtn'),m=document.getElementById('mmenu');
+b?.addEventListener('click',()=>m?.classList.toggle('open'));
 </script>

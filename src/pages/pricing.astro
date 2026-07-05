@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -179,9 +180,10 @@ const schema = {
   </section>
 
   <Footer />
+  <WhatsAppFloat />
 </Layout>
 
-<style>
+<style is:global>
 .page-hero { padding: 80px 0 60px; text-align: center; border-bottom: 1px solid var(--border); }
 .page-hero h1 { font-size: clamp(32px, 5vw, 52px); margin: 16px 0 16px; }
 .page-hero p { color: var(--muted); font-size: 17px; max-width: 600px; margin: 0 auto; }
