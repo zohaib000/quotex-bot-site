@@ -1,0 +1,306 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Quotex Bot Features",
+  "description": "Complete list of features in the Quotex Martingale Trading Bot Chrome Extension",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Martingale Strategy", "description": "Automatic martingale trading with custom sequences" },
+    { "@type": "ListItem", "position": 2, "name": "Compounding Mode", "description": "Advance to next investment amount on win" },
+    { "@type": "ListItem", "position": 3, "name": "Take Profit", "description": "Auto stop when net profit target reached" },
+    { "@type": "ListItem", "position": 4, "name": "Stop Loss", "description": "Auto stop when net loss limit reached" },
+    { "@type": "ListItem", "position": 5, "name": "Timer Stop", "description": "Auto stop after set duration" },
+    { "@type": "ListItem", "position": 6, "name": "Real-time Stats", "description": "Live session profit, loss and net tracking" },
+  ]
+};
+---
+
+<Layout
+  title="Quotex Bot Features — Complete Automated Trading Features List"
+  description="Discover all features of Quotex Bot: Martingale strategy, compounding mode, take profit, stop loss, timer, real-time stats, custom presets, demo mode and more. Free Chrome extension for Quotex QXBroker."
+  keywords="quotex bot features, quotex martingale features, quotex auto trading features, quotex take profit bot, quotex stop loss bot, quotex compounding bot, quotex trading presets, quotex demo bot"
+  schema={schema}
+>
+  <Header />
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge badge-blue">All Features</span>
+      <h1>Everything Inside <span class="gradient-text">Quotex Bot</span></h1>
+      <p>A complete breakdown of every feature in the most advanced free Quotex automation Chrome extension.</p>
+    </div>
+  </section>
+
+  <!-- CORE TRADING -->
+  <section class="section" id="martingale">
+    <div class="container">
+      <div class="feature-detail-grid">
+        <div class="feature-detail-content">
+          <span class="badge badge-green">Core Feature</span>
+          <h2>📊 Martingale Strategy Engine</h2>
+          <p>The heart of Quotex Bot is its advanced martingale strategy engine. Set any sequence of trade directions (up/down) and investment amounts — the bot executes them automatically and handles all win/loss logic.</p>
+          <ul class="feature-list">
+            <li>Custom up/down trade direction sequences</li>
+            <li>Custom investment amount ladders (e.g. 1, 2, 4, 8, 17, 35...)</li>
+            <li>Auto advance on loss — moves to next investment amount</li>
+            <li>Auto reset on win — returns to first investment</li>
+            <li>Handles neutral (draw) trades correctly</li>
+            <li>Works with any currency — USD, EUR, GBP, INR, PKR etc</li>
+          </ul>
+        </div>
+        <div class="feature-detail-visual">
+          <div class="flow-diagram">
+            <div class="flow-step start">Start: $1 UP</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-branch">
+              <div class="flow-win">WIN → Reset to $1</div>
+              <div class="flow-loss">LOSS → Next: $2 DOWN</div>
+            </div>
+            <div class="flow-arrow">↓ (if loss)</div>
+            <div class="flow-branch">
+              <div class="flow-win">WIN → Reset to $1</div>
+              <div class="flow-loss">LOSS → Next: $4 UP</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg2);" id="compounding">
+    <div class="container">
+      <div class="feature-detail-grid reverse">
+        <div class="feature-detail-visual">
+          <div class="compare-table">
+            <div class="compare-header">
+              <div class="compare-col">Trade</div>
+              <div class="compare-col green">Compounding ON</div>
+              <div class="compare-col muted">Compounding OFF</div>
+            </div>
+            {[
+              ["Trade 1 — WIN", "$1 → $2 (next)", "$1 → $1 (reset)"],
+              ["Trade 2 — WIN", "$2 → $4 (next)", "$1 → $1 (reset)"],
+              ["Trade 3 — LOSS", "$4 → $8 (next)", "$1 → $2 (next)"],
+              ["Trade 4 — WIN", "$8 → $1 (last→reset)", "$2 → $1 (reset)"],
+            ].map(([trade, comp, normal]) => (
+              <div class="compare-row">
+                <div class="compare-col muted" style="font-size:12px;">{trade}</div>
+                <div class="compare-col green" style="font-size:13px;">{comp}</div>
+                <div class="compare-col muted" style="font-size:13px;">{normal}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="feature-detail-content">
+          <span class="badge badge-green">Advanced Strategy</span>
+          <h2 id="compounding">📈 Compounding Mode</h2>
+          <p>Enable compounding to grow your position on wins instead of resetting. When compounding is ON, a winning trade moves you to the NEXT investment amount rather than resetting to the first.</p>
+          <ul class="feature-list">
+            <li>Win → advance to next amount (compounding on)</li>
+            <li>Win at last position → always resets to first</li>
+            <li>Loss behavior unchanged — always advances to next</li>
+            <li>Toggle on/off without restarting bot</li>
+            <li>Visual indicator on page shows C:ON or C:OFF status</li>
+            <li>Works with all preset and custom sequences</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="take-profit">
+    <div class="container">
+      <div class="three-features-grid">
+        <div class="three-feature">
+          <div class="three-feature-icon">🎯</div>
+          <h3>Take Profit</h3>
+          <p>Set a net profit target. When your session net profit (wins minus losses) reaches your target, the bot stops automatically and shows a success alert.</p>
+          <div class="feature-note">Based on NET profit — not gross wins</div>
+        </div>
+        <div class="three-feature" id="stop-loss">
+          <div class="three-feature-icon">🛑</div>
+          <h3>Stop Loss</h3>
+          <p>Set a maximum loss limit. When your session net loss reaches your limit, the bot stops automatically to protect your account balance.</p>
+          <div class="feature-note">Based on NET loss — accounts for any wins</div>
+        </div>
+        <div class="three-feature">
+          <div class="three-feature-icon">⏰</div>
+          <h3>Timer Stop</h3>
+          <p>Set a duration in minutes. Bot automatically stops after the timer runs out. Live countdown visible on the trading page.</p>
+          <div class="feature-note">Countdown shown on page in real time</div>
+        </div>
+      </div>
+      <div class="feature-note-box">
+        💡 All three auto-stop options are optional and independent. You can use any combination — e.g. Take Profit + Stop Loss together, or just a Timer alone.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg2);" id="stats">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-blue">Real-time Tracking</span>
+        <h2>📊 Live Session Statistics</h2>
+        <p style="color:var(--muted);max-width:560px;margin:0 auto;">Track your trading performance in real time — both on the page and in the sidebar.</p>
+      </div>
+      <div class="stats-features-grid">
+        {[
+          { icon: "📈", title: "Session Profit", desc: "Total extra earned from all winning trades in this session (not including investment returned)" },
+          { icon: "📉", title: "Session Loss", desc: "Total investment lost from all losing trades in this session" },
+          { icon: "💰", title: "Net P&L", desc: "Real overall result — profit minus loss. Green when positive, red when negative" },
+          { icon: "🔄", title: "Trade Count", desc: "Total number of trades executed in this session" },
+          { icon: "📊", title: "Lifetime Stats", desc: "All-time total profit, loss and net across all sessions shown in sidebar" },
+          { icon: "📈", title: "Compounding Status", desc: "Visual indicator on page showing C:ON or C:OFF so you always know the bot mode" },
+        ].map(s => (
+          <div class="stats-feature-card">
+            <div class="stats-feature-icon">{s.icon}</div>
+            <h4>{s.title}</h4>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="presets">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-green">Strategy Presets</span>
+        <h2>⭐ Built-in & Custom Presets</h2>
+        <p style="color:var(--muted);max-width:560px;margin:0 auto;">Start immediately with proven strategies or save your own custom sequences.</p>
+      </div>
+      <div class="presets-list">
+        {[
+          { name: "🟢 Conservative", risk: "Low Risk", seq: "up,down,up,down", amounts: "1, 2, 4, 8", desc: "Ideal for beginners or small accounts. Short sequence minimizes risk of hitting end of sequence." },
+          { name: "🟡 Balanced", risk: "Medium Risk", seq: "up,up,down,down,up,up,down,down", amounts: "1, 2, 4, 8, 17, 35, 73, 151", desc: "The most popular preset. Standard double-up martingale with 8-step sequence." },
+          { name: "🔴 Aggressive", risk: "High Risk", seq: "up,down × 5 pairs", amounts: "1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683", desc: "Triple-up martingale for fast recovery. Requires significantly larger account balance." },
+          { name: "⚡ Turbo", risk: "Very High Risk", seq: "up,up,up,down,down,down × 2", amounts: "1, 5, 25, 125, 625, 3125...", desc: "Extreme 5x multiplier. Only for large accounts. High risk, high reward potential." },
+          { name: "⭐ Custom", risk: "Your Choice", seq: "Any combination you set", amounts: "Any amounts you choose", desc: "Create and save unlimited custom presets. Name them, apply them with one click, delete when not needed." },
+        ].map(p => (
+          <div class="preset-list-item">
+            <div>
+              <div class="preset-list-name">{p.name} <span class="preset-list-risk">{p.risk}</span></div>
+              <p class="preset-list-desc">{p.desc}</p>
+            </div>
+            <div class="preset-list-details">
+              <div><span>Sequence:</span> <code>{p.seq}</code></div>
+              <div><span>Amounts:</span> <code>{p.amounts}</code></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg2);" id="demo">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-green">Free Forever</span>
+        <h2>🎮 Demo Mode — Try Before You Buy</h2>
+        <p style="color:var(--muted);max-width:600px;margin:0 auto;">Quotex Bot works 100% free on Quotex demo account. All features, no restrictions, no credit card. Practice with virtual money until you're confident.</p>
+      </div>
+      <div class="demo-compare">
+        <div class="demo-col">
+          <div class="demo-header free">🎮 Free — Demo Mode</div>
+          {["Full martingale automation", "All 4 preset strategies", "Custom presets & sequences", "Take profit & stop loss", "Timer auto stop", "Real-time session stats", "Compounding mode", "Pause between trades", "Mobile support (Lemur)", "WhatsApp community access"].map(f => (
+            <div class="demo-item"><span class="check">✅</span> {f}</div>
+          ))}
+        </div>
+        <div class="demo-col premium">
+          <div class="demo-header premium">💰 $20/mo — Live Trading</div>
+          {["Everything in Free", "Live real account trading", "Gumroad subscription verified", "Email-based authentication", "Priority WhatsApp support", "All future feature updates"].map(f => (
+            <div class="demo-item"><span class="check">✅</span> {f}</div>
+          ))}
+          <a href="https://zhorizon7.gumroad.com/l/alfvjx" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px;">
+            Get Live Access — $20/mo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container" style="text-align:center;">
+      <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:16px;">
+        Ready to Try All These <span class="gradient-text">Features for Free?</span>
+      </h2>
+      <p style="color:var(--muted);margin-bottom:32px;">Add Quotex Bot to Chrome and start trading on demo account in under 2 minutes.</p>
+      <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:16px;padding:16px 36px;">
+        🚀 Add to Chrome — Free
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+.page-hero { padding: 80px 0 60px; text-align: center; border-bottom: 1px solid var(--border); }
+.page-hero h1 { font-size: clamp(32px, 5vw, 52px); margin: 16px 0 16px; }
+.page-hero p { color: var(--muted); font-size: 17px; max-width: 560px; margin: 0 auto; }
+.feature-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.feature-detail-grid.reverse { direction: rtl; }
+.feature-detail-grid.reverse > * { direction: ltr; }
+.feature-detail-content h2 { font-size: clamp(24px, 3vw, 36px); margin: 16px 0 16px; }
+.feature-detail-content p { color: var(--muted); font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.feature-list li { display: flex; gap: 10px; font-size: 14px; color: var(--muted); }
+.feature-list li::before { content: "✓"; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+.flow-diagram { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; font-size: 13px; }
+.flow-step.start { background: rgba(0,230,118,0.1); border: 1px solid rgba(0,230,118,0.3); color: var(--accent); padding: 10px 16px; border-radius: 8px; text-align: center; font-weight: 700; }
+.flow-arrow { text-align: center; color: var(--muted); padding: 8px 0; }
+.flow-branch { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.flow-win { background: rgba(0,230,118,0.08); border: 1px solid rgba(0,230,118,0.2); color: var(--accent); padding: 10px 12px; border-radius: 8px; font-size: 12px; text-align: center; }
+.flow-loss { background: rgba(255,23,68,0.08); border: 1px solid rgba(255,23,68,0.2); color: var(--red); padding: 10px 12px; border-radius: 8px; font-size: 12px; text-align: center; }
+.compare-table { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; font-size: 13px; }
+.compare-header, .compare-row { display: grid; grid-template-columns: 1.5fr 1.5fr 1.5fr; }
+.compare-header { background: rgba(255,255,255,0.04); border-bottom: 1px solid var(--border); }
+.compare-col { padding: 12px 14px; }
+.compare-col.green { color: var(--accent); font-weight: 600; }
+.compare-col.muted { color: var(--muted); }
+.compare-row { border-bottom: 1px solid var(--border); }
+.compare-row:last-child { border: none; }
+.three-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px; }
+.three-feature { padding: 32px 24px; border-radius: 12px; background: var(--card); border: 1px solid var(--border); text-align: center; }
+.three-feature-icon { font-size: 40px; margin-bottom: 16px; }
+.three-feature h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.three-feature p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.feature-note { margin-top: 12px; font-size: 12px; color: var(--accent); background: rgba(0,230,118,0.08); padding: 6px 12px; border-radius: 6px; display: inline-block; }
+.feature-note-box { background: rgba(0,176,255,0.06); border: 1px solid rgba(0,176,255,0.2); color: var(--accent2); padding: 16px 20px; border-radius: 10px; font-size: 14px; }
+.stats-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.stats-feature-card { padding: 24px; border-radius: 12px; background: var(--card); border: 1px solid var(--border); }
+.stats-feature-icon { font-size: 28px; margin-bottom: 12px; }
+.stats-feature-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.stats-feature-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.presets-list { display: flex; flex-direction: column; gap: 16px; }
+.preset-list-item { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 24px; border-radius: 12px; background: var(--card); border: 1px solid var(--border); align-items: center; }
+.preset-list-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.preset-list-risk { font-size: 12px; color: var(--muted); font-weight: 400; margin-left: 8px; }
+.preset-list-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.preset-list-details { display: flex; flex-direction: column; gap: 10px; font-size: 13px; }
+.preset-list-details span { color: var(--muted); }
+.preset-list-details code { color: var(--accent2); background: rgba(0,176,255,0.08); padding: 3px 8px; border-radius: 4px; font-size: 12px; }
+.demo-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; margin: 0 auto; }
+.demo-col { border-radius: 12px; background: var(--card); border: 1px solid var(--border); overflow: hidden; }
+.demo-col.premium { border-color: rgba(0,230,118,0.3); }
+.demo-header { padding: 16px 20px; font-weight: 700; font-size: 16px; border-bottom: 1px solid var(--border); }
+.demo-header.free { background: rgba(0,176,255,0.06); color: var(--accent2); }
+.demo-header.premium { background: rgba(0,230,118,0.08); color: var(--accent); }
+.demo-item { display: flex; gap: 10px; padding: 10px 20px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.demo-item:last-of-type { border: none; }
+.check { color: var(--accent); }
+.cta-section { padding: 80px 0; border-top: 1px solid var(--border); }
+@media (max-width: 900px) {
+  .feature-detail-grid, .feature-detail-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+  .three-features-grid, .stats-features-grid { grid-template-columns: 1fr 1fr; }
+  .preset-list-item { grid-template-columns: 1fr; }
+  .demo-compare { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .three-features-grid, .stats-features-grid { grid-template-columns: 1fr; }
+}
+</style>

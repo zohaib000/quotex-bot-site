@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Privacy Policy — Quotex Bot Chrome Extension"
+  description="Privacy policy for Quotex Bot Chrome Extension. Learn what data we collect, how we use it and your rights."
+  keywords="quotex bot privacy policy, quotex bot data policy"
+>
+  <Header />
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Privacy <span class="gradient-text">Policy</span></h1>
+      <p>Last updated: June 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container policy-container">
+      <div class="policy-content">
+
+        <h2>Information We Collect</h2>
+        <p>Our extension collects and stores the following data locally on your device using Chrome's storage API:</p>
+        <ul>
+          <li>Email address (used solely for subscription verification)</li>
+          <li>Trading preferences (sequences, investment amounts, presets)</li>
+          <li>Session statistics (profit/loss data — stored locally only)</li>
+          <li>Extension settings (time intervals, auto-stop preferences)</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <ul>
+          <li>Email is used only to verify your Gumroad subscription status via our verification server</li>
+          <li>All trading data is stored locally in Chrome storage on your device</li>
+          <li>We do not sell, share, or transfer your personal data to third parties</li>
+          <li>We do not collect browsing history or any data outside of qxbroker.com/quotex</li>
+        </ul>
+
+        <h2>Data Storage</h2>
+        <p>All trading configuration and statistics data is stored locally using Chrome's <code>chrome.storage.local</code> API on your device. No trading data is transmitted to our servers. Only your email address is sent to our verification server solely for subscription validation purposes, using HTTPS encrypted connections.</p>
+
+        <h2>Side Panel API Usage</h2>
+        <p>This extension uses the Chrome Side Panel API to provide a persistent trading control interface that remains visible while users actively trade on Quotex (qxbroker.com). The side panel allows users to monitor real-time profit/loss statistics, control the automated trading bot, configure trading sequences, and manage risk settings without interrupting their trading workflow. A popup would close when users click on the trading chart, making it impossible to monitor bot activity during active trading sessions.</p>
+
+        <h2>Third Party Services</h2>
+        <ul>
+          <li><strong>Gumroad:</strong> Used for subscription management and payment processing. Subject to Gumroad's own privacy policy.</li>
+          <li><strong>QXBroker/Quotex:</strong> Our extension operates on this trading platform. Subject to their privacy policy.</li>
+        </ul>
+
+        <h2>User Rights</h2>
+        <p>You can delete all stored data at any time by:</p>
+        <ul>
+          <li>Removing the extension from Chrome (Settings → Extensions → Remove)</li>
+          <li>Clearing extension data in Chrome settings</li>
+          <li>Using the browser's developer tools to clear extension storage</li>
+        </ul>
+
+        <h2>Children's Privacy</h2>
+        <p>This extension is not intended for use by anyone under 18 years of age. We do not knowingly collect data from minors.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this privacy policy as we add new features. Continued use of the extension after updates means acceptance of the updated policy. Major changes will be communicated through the extension update notes.</p>
+
+        <h2>Contact</h2>
+        <p>For privacy concerns or questions, contact us:</p>
+        <ul>
+          <li>WhatsApp: <a href="https://wa.me/+923064200589" target="_blank" rel="noopener" style="color:var(--accent);">+923064200589</a></li>
+          <li>Community: <a href="https://chat.whatsapp.com/JCiTWuZYOQ0Ez3EVnZggVg" target="_blank" rel="noopener" style="color:var(--accent);">WhatsApp Trading Group</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+.page-hero { padding: 60px 0 40px; border-bottom: 1px solid var(--border); }
+.page-hero h1 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 8px; }
+.page-hero p { color: var(--muted); font-size: 14px; }
+.policy-container { max-width: 800px; }
+.policy-content h2 { font-size: 22px; font-weight: 700; margin: 36px 0 14px; color: var(--accent2); }
+.policy-content p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 14px; }
+.policy-content ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.policy-content ul li { font-size: 15px; color: var(--muted); padding-left: 20px; position: relative; line-height: 1.6; }
+.policy-content ul li::before { content: "•"; color: var(--accent); position: absolute; left: 0; }
+.policy-content code { background: var(--card); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: var(--accent2); }
+</style>

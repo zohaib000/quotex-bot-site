@@ -1,0 +1,383 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Use Quotex Bot — Automated Martingale Trading",
+  "description": "Step by step guide to set up and use the Quotex Martingale Trading Bot Chrome Extension",
+  "totalTime": "PT2M",
+  "supply": [
+    { "@type": "HowToSupply", "name": "Chrome Browser" },
+    { "@type": "HowToSupply", "name": "Quotex / QXBroker Account" }
+  ],
+  "tool": [
+    { "@type": "HowToTool", "name": "Quotex Bot Chrome Extension" }
+  ],
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Install Chrome Extension", "text": "Add Quotex Bot from the Chrome Web Store with one click. Free — no account required for demo mode." },
+    { "@type": "HowToStep", "position": 2, "name": "Open Quotex Trading Page", "text": "Go to qxbroker.com and open the demo or live trading page. The extension sidebar opens automatically." },
+    { "@type": "HowToStep", "position": 3, "name": "Configure Your Strategy", "text": "Choose a preset strategy or enter your custom trading sequence and investment amounts." },
+    { "@type": "HowToStep", "position": 4, "name": "Set Risk Management", "text": "Optionally set take profit, stop loss, and timer limits for controlled trading." },
+    { "@type": "HowToStep", "position": 5, "name": "Click Start Trading", "text": "Click the Start Trading button. The bot will begin placing trades automatically." }
+  ]
+};
+---
+
+<Layout
+  title="How to Use Quotex Bot — Step by Step Automated Trading Setup Guide"
+  description="Complete step-by-step guide to set up and use the Quotex Martingale Trading Bot Chrome Extension. Learn how to configure trading sequences, set risk management, and start automated trading on QXBroker in under 2 minutes."
+  keywords="how to use quotex bot, quotex bot setup guide, quotex automated trading tutorial, quotex martingale bot guide, how to automate quotex trading, quotex bot chrome extension setup, qxbroker auto trading guide"
+  schema={schema}
+>
+  <Header />
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge badge-green">Setup Guide</span>
+      <h1>How to Use <span class="gradient-text">Quotex Bot</span></h1>
+      <p>Get automated trading running in under 2 minutes. Follow this step-by-step guide to set up Quotex Bot on your QXBroker account.</p>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS -->
+  <section class="section-sm" style="background:var(--bg2);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="requirements-grid">
+        <div class="req-item">
+          <div class="req-icon">🌐</div>
+          <div>
+            <div class="req-title">Google Chrome Browser</div>
+            <div class="req-desc">Any Chrome version 114+ or Chromium-based browser</div>
+          </div>
+        </div>
+        <div class="req-item">
+          <div class="req-icon">📊</div>
+          <div>
+            <div class="req-title">Quotex / QXBroker Account</div>
+            <div class="req-desc">Free demo account works — no deposit needed to start</div>
+          </div>
+        </div>
+        <div class="req-item">
+          <div class="req-icon">⏱️</div>
+          <div>
+            <div class="req-title">2 Minutes Setup Time</div>
+            <div class="req-desc">Install and start trading in under 2 minutes</div>
+          </div>
+        </div>
+        <div class="req-item">
+          <div class="req-icon">💳</div>
+          <div>
+            <div class="req-title">No Credit Card for Demo</div>
+            <div class="req-desc">Demo mode is completely free forever</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-blue">Step by Step</span>
+        <h2>Complete Setup <span class="gradient-text">Guide</span></h2>
+      </div>
+
+      <div class="steps-detailed">
+
+        <div class="step-detailed">
+          <div class="step-num-large">01</div>
+          <div class="step-content">
+            <h3>Install Quotex Bot Chrome Extension</h3>
+            <p>Open the Chrome Web Store and search for "Quotex Bot" or click the direct link below. Click <strong>Add to Chrome</strong> then confirm by clicking <strong>Add Extension</strong>.</p>
+            <p style="color:var(--muted);margin-top:12px;">After installation, you'll see the Quotex Bot icon (🤖) in your Chrome toolbar. If you don't see it, click the puzzle piece icon and pin Quotex Bot.</p>
+            <div class="step-actions">
+              <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf" target="_blank" rel="noopener" class="btn btn-primary">🚀 Install from Chrome Web Store</a>
+            </div>
+            <div class="step-tip">💡 Tip: The extension automatically opens when you visit any Quotex/QXBroker page.</div>
+          </div>
+        </div>
+
+        <div class="step-detailed">
+          <div class="step-num-large">02</div>
+          <div class="step-content">
+            <h3>Open Quotex Trading Page</h3>
+            <p>Go to <a href="https://qxbroker.com/en/demo-trade" target="_blank" rel="noopener" style="color:var(--accent)">qxbroker.com/en/demo-trade</a> for demo trading or the live trading page for real account. The bot sidebar will open automatically on the right side of your browser.</p>
+            <p style="color:var(--muted);margin-top:12px;">If the sidebar doesn't open automatically, click the Quotex Bot icon (🤖) in your Chrome toolbar.</p>
+            <div class="step-tip">💡 Tip: Keep the Trades panel visible at the bottom right of Quotex. The bot tracks your trade results from there — hiding it will cause issues.</div>
+          </div>
+        </div>
+
+        <div class="step-detailed">
+          <div class="step-num-large">03</div>
+          <div class="step-content">
+            <h3>Choose Your Trading Strategy</h3>
+            <p>In the sidebar, you have two options:</p>
+            <div class="option-cards">
+              <div class="option-card">
+                <h4>🎯 Use a Preset</h4>
+                <p>Click one of the 4 built-in presets — Conservative, Balanced, Aggressive, or Turbo. This auto-fills your sequence and amounts.</p>
+              </div>
+              <div class="option-card">
+                <h4>✏️ Custom Sequence</h4>
+                <p>Type your own trading sequence (e.g. up,down,up,down) and investment amounts (e.g. 1,2,4,8) in the input fields.</p>
+              </div>
+            </div>
+            <div class="step-tip">💡 Tip: Start with the Conservative preset on demo to understand how the bot works before using larger amounts.</div>
+          </div>
+        </div>
+
+        <div class="step-detailed">
+          <div class="step-num-large">04</div>
+          <div class="step-content">
+            <h3>Set Time Interval</h3>
+            <p>Select how long each trade should last. The bot uses the Quotex time dropdown — common values are 5 seconds, 30 seconds, 1 minute, 5 minutes etc.</p>
+            <p style="color:var(--muted);margin-top:12px;">For custom durations like 57 seconds, the bot automatically finds the nearest dropdown option and fine-tunes using the +/- buttons.</p>
+            <div class="step-tip">💡 Tip: Shorter time intervals (5-30s) mean faster trades and more data but higher noise. Longer intervals (1-5min) give cleaner signals.</div>
+          </div>
+        </div>
+
+        <div class="step-detailed">
+          <div class="step-num-large">05</div>
+          <div class="step-content">
+            <h3>Configure Risk Management (Optional)</h3>
+            <p>Set any combination of these optional auto-stop features:</p>
+            <div class="risk-options">
+              <div class="risk-option">
+                <span class="risk-icon">🎯</span>
+                <div>
+                  <strong>Take Profit</strong>
+                  <p>Bot stops when net profit reaches your target (e.g. $50)</p>
+                </div>
+              </div>
+              <div class="risk-option">
+                <span class="risk-icon">🛑</span>
+                <div>
+                  <strong>Stop Loss</strong>
+                  <p>Bot stops when net loss reaches your limit (e.g. $20)</p>
+                </div>
+              </div>
+              <div class="risk-option">
+                <span class="risk-icon">⏰</span>
+                <div>
+                  <strong>Timer</strong>
+                  <p>Bot stops after set duration (e.g. 30 minutes)</p>
+                </div>
+              </div>
+              <div class="risk-option">
+                <span class="risk-icon">⏸️</span>
+                <div>
+                  <strong>Pause Between Trades</strong>
+                  <p>Fixed or random pause to make bot look more natural</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-detailed">
+          <div class="step-num-large">06</div>
+          <div class="step-content">
+            <h3>Click Start Trading</h3>
+            <p>Click the green <strong>Start Trading</strong> button in the sidebar. The bot will immediately begin executing trades according to your sequence. You'll see:</p>
+            <div class="what-you-see">
+              <div class="see-item">📊 Live stats bar on page showing Profit / Loss / Net / Trades</div>
+              <div class="see-item">🤖 Sidebar header showing bot status (Active/Stopped)</div>
+              <div class="see-item">📈 Compounding indicator (C:ON or C:OFF)</div>
+              <div class="see-item">⚠️ Warning banner reminding you not to hide the Trades panel</div>
+              <div class="see-item">⏰ Countdown timer if you enabled timer stop</div>
+            </div>
+            <div class="step-tip">⚠️ Important: Do NOT manually place trades while the bot is running — this can interfere with the martingale sequence logic.</div>
+          </div>
+        </div>
+
+        <div class="step-detailed">
+          <div class="step-num-large">07</div>
+          <div class="step-content">
+            <h3>Monitor & Stop</h3>
+            <p>The bot runs until one of these happens:</p>
+            <ul class="stop-list">
+              <li>You click <strong>Stop Trading</strong> in the sidebar</li>
+              <li>Take Profit target is reached</li>
+              <li>Stop Loss limit is hit</li>
+              <li>Timer runs out</li>
+              <li>You close or refresh the browser tab (you'll be warned first)</li>
+            </ul>
+            <p style="color:var(--muted);margin-top:12px;">After stopping, all session stats reset when you start a new session. Lifetime stats are preserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE -->
+  <section class="section" style="background:var(--bg2);">
+    <div class="container">
+      <div class="two-col-simple">
+        <div>
+          <span class="badge badge-blue">Mobile Trading</span>
+          <h2 style="margin:16px 0 16px;font-size:clamp(24px,3vw,36px);">Using Quotex Bot on <span class="gradient-text">Android Mobile</span></h2>
+          <p style="color:var(--muted);margin-bottom:20px;line-height:1.8;">Quotex Bot works on Android mobile devices using the <strong>Lemur Browser</strong> — a Chromium-based browser that supports Chrome extensions.</p>
+          <div class="mobile-steps">
+            {[
+              "Download Lemur Browser from the Play Store",
+              "Install Quotex Bot extension in Lemur Browser",
+              "Open QXBroker demo or live trading page",
+              "Click the extension icon to open the sidebar",
+              "Configure and start trading — same as desktop!"
+            ].map((s, i) => (
+              <div class="mobile-step">
+                <span class="mobile-step-num">{i + 1}</span>
+                <span>{s}</span>
+              </div>
+            ))}
+          </div>
+          <div class="step-tip" style="margin-top:20px;">💡 iOS is currently not supported as Chrome extensions cannot be installed on Safari or iOS Chrome.</div>
+        </div>
+        <div class="mobile-visual">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="phone-header">📱 Lemur Browser</div>
+              <div class="phone-content">
+                <div class="phone-badge active">🤖 Bot Active</div>
+                <div class="phone-stat">📈 Profit: +$12.40</div>
+                <div class="phone-stat">📉 Loss: -$4.00</div>
+                <div class="phone-stat green">💰 Net: +$8.40</div>
+                <div class="phone-trade">⬆️ UP — $2 — 5s</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ QUICK -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-green">Common Questions</span>
+        <h2>Quick Answers for <span class="gradient-text">New Users</span></h2>
+      </div>
+      <div class="quick-faq">
+        {[
+          { q: "Does the bot work on Quotex demo account?", a: "Yes! Quotex Bot works 100% free on the Quotex demo account. All features are available — no subscription needed." },
+          { q: "What happens if I refresh the page while the bot is running?", a: "You'll see a browser warning asking if you want to leave. If you confirm, the bot stops and all session stats reset. If you stay, the bot continues." },
+          { q: "Can I run the bot while doing other things on my computer?", a: "Yes, as long as the Quotex tab is open in Chrome and the Trades panel is visible. You can use other tabs or applications." },
+          { q: "Does it work with all Quotex currency pairs?", a: "Yes! The bot works with all currency pairs — USD, EUR, GBP, INR, PKR and any other pair available on Quotex/QXBroker." },
+          { q: "What is the best time interval for martingale trading?", a: "Most users find 5-60 seconds works well for martingale. Shorter intervals give more trades but more noise. We recommend starting with 30 seconds on demo." },
+          { q: "Can I use multiple trading sequences?", a: "Yes — you can save up to 5 custom presets plus the 4 built-in presets. Switch between them any time." },
+        ].map(faq => (
+          <div class="quick-faq-item">
+            <h3>❓ {faq.q}</h3>
+            <p>{faq.a}</p>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="/faq" class="btn btn-secondary">See All FAQ →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container" style="text-align:center;">
+      <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:16px;">
+        Ready to Start? <span class="gradient-text">It's Free on Demo</span>
+      </h2>
+      <p style="color:var(--muted);margin-bottom:32px;">No credit card. No deposit. Just install and start automating your Quotex trading.</p>
+      <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:16px;padding:16px 36px;">
+        🚀 Add to Chrome — Free
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+.page-hero { padding: 80px 0 60px; text-align: center; border-bottom: 1px solid var(--border); }
+.page-hero h1 { font-size: clamp(32px, 5vw, 52px); margin: 16px 0 16px; }
+.page-hero p { color: var(--muted); font-size: 17px; max-width: 600px; margin: 0 auto; }
+.requirements-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.req-item { display: flex; gap: 16px; align-items: flex-start; }
+.req-icon { font-size: 28px; flex-shrink: 0; }
+.req-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.req-desc { font-size: 13px; color: var(--muted); }
+.steps-detailed { display: flex; flex-direction: column; gap: 0; }
+.step-detailed {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 32px;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.step-detailed:last-child { border: none; }
+.step-num-large {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 900;
+  color: rgba(0,230,118,0.15);
+  line-height: 1;
+  text-align: center;
+}
+.step-content h3 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+.step-content p { color: var(--muted); font-size: 15px; line-height: 1.8; }
+.step-actions { margin-top: 20px; }
+.step-tip {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  background: rgba(0,230,118,0.06);
+  border: 1px solid rgba(0,230,118,0.15);
+  color: var(--accent);
+}
+.option-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.option-card { padding: 20px; border-radius: 10px; background: var(--card); border: 1px solid var(--border); }
+.option-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.option-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.risk-options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.risk-option { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border-radius: 8px; background: var(--card); border: 1px solid var(--border); }
+.risk-icon { font-size: 22px; flex-shrink: 0; }
+.risk-option strong { display: block; margin-bottom: 4px; font-size: 14px; }
+.risk-option p { font-size: 13px; color: var(--muted); }
+.what-you-see { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.see-item { display: flex; gap: 10px; padding: 10px 14px; border-radius: 8px; background: var(--card); border: 1px solid var(--border); font-size: 14px; }
+.stop-list { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; list-style: none; }
+.stop-list li { display: flex; gap: 10px; font-size: 14px; color: var(--muted); }
+.stop-list li::before { content: "→"; color: var(--accent); }
+.two-col-simple { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.mobile-steps { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.mobile-step { display: flex; gap: 14px; align-items: center; font-size: 14px; }
+.mobile-step-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(0,230,118,0.12); border: 1px solid rgba(0,230,118,0.3); color: var(--accent); font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.phone-mockup { display: flex; justify-content: center; }
+.phone-screen { background: var(--bg); border: 2px solid var(--border); border-radius: 20px; padding: 20px; width: 240px; font-size: 13px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+.phone-header { text-align: center; font-weight: 700; padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 14px; color: var(--muted); font-size: 12px; }
+.phone-badge { padding: 8px 12px; border-radius: 8px; font-weight: 700; margin-bottom: 10px; font-size: 12px; background: rgba(0,230,118,0.1); color: var(--accent); border: 1px solid rgba(0,230,118,0.2); }
+.phone-stat { padding: 8px 12px; border-radius: 6px; background: var(--card); border: 1px solid var(--border); margin-bottom: 6px; font-size: 12px; }
+.phone-stat.green { color: var(--accent); background: rgba(0,230,118,0.06); border-color: rgba(0,230,118,0.2); }
+.phone-trade { margin-top: 10px; padding: 10px 12px; border-radius: 8px; background: rgba(0,176,255,0.08); border: 1px solid rgba(0,176,255,0.2); color: var(--accent2); font-weight: 600; font-size: 12px; text-align: center; }
+.quick-faq { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.quick-faq-item { padding: 24px; border-radius: 12px; background: var(--card); border: 1px solid var(--border); }
+.quick-faq-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.quick-faq-item p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.cta-section { padding: 80px 0; border-top: 1px solid var(--border); }
+@media (max-width: 900px) {
+  .requirements-grid { grid-template-columns: 1fr 1fr; }
+  .step-detailed { grid-template-columns: 60px 1fr; gap: 20px; }
+  .step-num-large { font-size: 36px; }
+  .option-cards, .risk-options { grid-template-columns: 1fr; }
+  .two-col-simple { grid-template-columns: 1fr; }
+  .quick-faq { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .requirements-grid { grid-template-columns: 1fr; }
+  .step-detailed { grid-template-columns: 1fr; }
+  .step-num-large { display: none; }
+}
+</style>

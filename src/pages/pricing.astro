@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "PriceSpecification",
+  "name": "Quotex Bot Pricing",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Demo Free Plan",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Full Quotex Bot on demo account — free forever"
+    },
+    {
+      "@type": "Offer",
+      "name": "Live Trading Premium",
+      "price": "20",
+      "priceCurrency": "USD",
+      "billingPeriod": "P1M",
+      "description": "Full Quotex Bot on live real account"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Quotex Bot Pricing — Free Demo, $20/month Live Trading"
+  description="Quotex Bot pricing plans. Use all features completely free on Quotex demo account forever. Upgrade to live trading for just $20/month via Gumroad subscription. No hidden fees."
+  keywords="quotex bot price, quotex bot cost, quotex bot subscription, quotex bot free, quotex bot $20, quotex automated trading price, qxbroker bot pricing, quotex bot monthly plan"
+  schema={schema}
+>
+  <Header />
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge badge-green">Simple Pricing</span>
+      <h1>Start Free. <span class="gradient-text">Upgrade When Ready.</span></h1>
+      <p>Try the full Quotex Bot on demo account forever — no credit card, no limits. Upgrade to live trading when you're confident.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="pricing-grid">
+
+        <!-- FREE -->
+        <div class="pricing-card">
+          <div class="pricing-badge free">FREE FOREVER</div>
+          <div class="pricing-name">Demo Mode</div>
+          <div class="pricing-price">
+            <span class="price-amount">$0</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">Perfect for learning, testing strategies and practicing risk-free with virtual money.</p>
+          <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf" target="_blank" rel="noopener" class="btn btn-secondary" style="width:100%;justify-content:center;">
+            🚀 Add to Chrome Free
+          </a>
+          <div class="pricing-features">
+            <div class="pricing-section-title">What's Included</div>
+            {[
+              "Full martingale automation on demo",
+              "All 4 built-in preset strategies",
+              "Unlimited custom presets (save 5)",
+              "Custom trading sequences",
+              "Custom investment amounts",
+              "Take Profit auto stop",
+              "Stop Loss auto stop",
+              "Timer auto stop",
+              "Real-time session statistics",
+              "Lifetime stats tracking",
+              "Compounding mode",
+              "Pause between trades (fixed + random)",
+              "Chrome sidebar interface",
+              "Mobile support via Lemur Browser",
+              "WhatsApp community access",
+            ].map(f => <div class="pricing-feature"><span class="pf-check">✅</span>{f}</div>)}
+            <div class="pricing-feature disabled"><span class="pf-check">❌</span>Live real account trading</div>
+          </div>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="pricing-card premium">
+          <div class="pricing-badge premium-badge">MOST POPULAR</div>
+          <div class="pricing-name">Live Trading</div>
+          <div class="pricing-price">
+            <span class="price-amount">$20</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">Full bot access on your real Quotex live account. Verified monthly subscription via Gumroad.</p>
+          <a href="https://zhorizon7.gumroad.com/l/alfvjx" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:14px;">
+            💰 Get Live Access — $20/mo
+          </a>
+          <div class="pricing-features">
+            <div class="pricing-section-title">Everything in Free, Plus</div>
+            {[
+              "Live real account trading",
+              "Gumroad subscription management",
+              "Email-verified authentication",
+              "Auto-subscription validation",
+              "Priority WhatsApp support",
+              "All future feature updates",
+              "Access to trading signals group",
+            ].map(f => <div class="pricing-feature"><span class="pf-check">✅</span>{f}</div>)}
+          </div>
+        </div>
+
+      </div>
+
+      <!-- HOW TO SUBSCRIBE -->
+      <div class="subscribe-guide">
+        <h3>How to Subscribe for Live Trading</h3>
+        <div class="subscribe-steps">
+          {[
+            { n: "1", t: "Click 'Get Live Access'", d: "Opens Gumroad checkout — secure payment processing" },
+            { n: "2", t: "Enter your email", d: "Use the same email you'll enter in the Quotex Bot extension" },
+            { n: "3", t: "Complete payment", d: "Credit card, PayPal or other Gumroad payment methods" },
+            { n: "4", t: "Open the extension", d: "Select Live mode, enter your Gumroad email and start trading" },
+          ].map(s => (
+            <div class="subscribe-step">
+              <div class="subscribe-step-num">{s.n}</div>
+              <div>
+                <div class="subscribe-step-title">{s.t}</div>
+                <div class="subscribe-step-desc">{s.d}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="subscribe-note">
+          🔒 Payments are processed securely by Gumroad. You can cancel your subscription anytime from your Gumroad account. Email used for purchase must match the email entered in the extension.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ PRICING -->
+  <section class="section" style="background:var(--bg2);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-blue">Pricing FAQ</span>
+        <h2>Common <span class="gradient-text">Pricing Questions</span></h2>
+      </div>
+      <div class="pricing-faq">
+        {[
+          { q: "Is demo mode really free forever?", a: "Yes! Demo mode is completely free with no time limit. You can use all features on the Quotex demo account forever without any subscription." },
+          { q: "How does the live trading subscription work?", a: "You subscribe monthly via Gumroad ($20/month). Each time you open the bot in live mode, it verifies your subscription by checking your Gumroad email." },
+          { q: "What if I cancel my subscription?", a: "You can cancel anytime from your Gumroad account. After cancellation, you can still use demo mode for free — live trading will be disabled at the end of your billing period." },
+          { q: "Can I share my subscription with others?", a: "No — subscriptions are per-email address. The email used for Gumroad payment must match the email entered in the extension." },
+          { q: "Do you offer refunds?", a: "Refund requests are handled through Gumroad. Contact us on WhatsApp if you have issues and we'll help resolve them." },
+          { q: "Will the price change in the future?", a: "Current subscribers are locked in at $20/month. New pricing may apply to future subscribers but existing subscriptions won't be affected." },
+        ].map(faq => (
+          <div class="pricing-faq-item">
+            <h3>{faq.q}</h3>
+            <p>{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container" style="text-align:center;">
+      <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:16px;">
+        Start With <span class="gradient-text">Free Demo Today</span>
+      </h2>
+      <p style="color:var(--muted);margin-bottom:32px;">No credit card, no deposit, no risk. Try the full bot on Quotex demo account right now.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:16px;padding:16px 36px;">
+          🚀 Add to Chrome — Free
+        </a>
+        <a href="https://wa.me/+923064200589" target="_blank" rel="noopener" class="btn btn-secondary">
+          💬 Ask a Question
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+.page-hero { padding: 80px 0 60px; text-align: center; border-bottom: 1px solid var(--border); }
+.page-hero h1 { font-size: clamp(32px, 5vw, 52px); margin: 16px 0 16px; }
+.page-hero p { color: var(--muted); font-size: 17px; max-width: 600px; margin: 0 auto; }
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 0 auto 60px; }
+.pricing-card { border-radius: 16px; background: var(--card); border: 1px solid var(--border); padding: 32px; position: relative; }
+.pricing-card.premium { border-color: rgba(0,230,118,0.4); background: rgba(0,230,118,0.03); }
+.pricing-badge { display: inline-block; padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+.pricing-badge.free { background: rgba(0,176,255,0.1); color: var(--accent2); border: 1px solid rgba(0,176,255,0.2); }
+.pricing-badge.premium-badge { background: rgba(0,230,118,0.12); color: var(--accent); border: 1px solid rgba(0,230,118,0.3); }
+.pricing-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+.pricing-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 16px; }
+.price-amount { font-family: var(--font-display); font-size: 52px; font-weight: 900; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.price-period { font-size: 16px; color: var(--muted); }
+.pricing-desc { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
+.pricing-features { margin-top: 28px; }
+.pricing-section-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.pricing-feature { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.pricing-feature.disabled { opacity: 0.4; }
+.pf-check { flex-shrink: 0; font-size: 13px; }
+.subscribe-guide { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 36px; max-width: 860px; margin: 0 auto; }
+.subscribe-guide h3 { font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+.subscribe-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 24px; }
+.subscribe-step { display: flex; flex-direction: column; gap: 10px; }
+.subscribe-step-num { width: 36px; height: 36px; border-radius: 50%; background: rgba(0,230,118,0.12); border: 1px solid rgba(0,230,118,0.3); color: var(--accent); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.subscribe-step-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.subscribe-step-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.subscribe-note { background: rgba(0,176,255,0.06); border: 1px solid rgba(0,176,255,0.15); border-radius: 8px; padding: 14px 16px; font-size: 13px; color: var(--muted); }
+.pricing-faq { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.pricing-faq-item { padding: 24px; border-radius: 12px; background: var(--card); border: 1px solid var(--border); }
+.pricing-faq-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.pricing-faq-item p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.cta-section { padding: 80px 0; border-top: 1px solid var(--border); }
+@media (max-width: 768px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .subscribe-steps { grid-template-columns: 1fr 1fr; }
+  .pricing-faq { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .subscribe-steps { grid-template-columns: 1fr; }
+}
+</style>

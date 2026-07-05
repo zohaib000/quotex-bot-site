@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Use Quotex Bot — Complete Beginner Tutorial 2026",
+  "description": "Step-by-step tutorial for setting up and using the Quotex auto trading bot Chrome extension.",
+  "author": { "@type": "Organization", "name": "QuotexBot" },
+  "publisher": { "@type": "Organization", "name": "QuotexBot", "logo": { "@type": "ImageObject", "url": "https://quotexbot.com/logo.png" } },
+  "datePublished": "2026-06-10",
+  "dateModified": "2026-06-10"
+};
+---
+
+<Layout
+  title="How to Use Quotex Bot — Complete Beginner Tutorial 2026"
+  description="Complete step-by-step beginner tutorial for Quotex Bot Chrome extension. Learn how to install, configure trading sequences, set risk management and start automated martingale trading on QXBroker in 2026."
+  keywords="how to use quotex bot, quotex bot tutorial, quotex bot beginners guide, quotex auto trading tutorial, quotex bot setup 2026, qxbroker bot tutorial, quotex martingale bot setup, quotex trading bot guide"
+  schema={schema}
+>
+  <Header />
+
+  <article class="blog-article">
+    <div class="container blog-container">
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="badge badge-blue">Tutorial</span>
+          <span class="article-date">June 10, 2026 · 6 min read</span>
+        </div>
+        <h1>How to Use Quotex Bot — Complete Beginner Tutorial</h1>
+        <p class="article-lead">A complete step-by-step tutorial for beginners on how to set up and use the Quotex automated trading bot Chrome extension. From installation to your first automated trade in under 5 minutes.</p>
+      </header>
+
+      <div class="article-content">
+
+        <h2>What You Need Before Starting</h2>
+        <ul class="article-list">
+          <li>Google Chrome browser (any recent version)</li>
+          <li>A Quotex or QXBroker account (free demo works)</li>
+          <li>5 minutes of setup time</li>
+        </ul>
+
+        <div class="article-callout info">
+          <strong>💡 Good News:</strong> You do NOT need a live account or real money to start. The Quotex demo account comes with virtual $10,000 — perfect for testing.
+        </div>
+
+        <h2>Step 1: Install Quotex Bot Chrome Extension</h2>
+        <p>Open your Chrome browser and visit the Chrome Web Store. Search for "Quotex Bot" or use the direct install link below.</p>
+        <p>Click <strong>Add to Chrome</strong> → then click <strong>Add Extension</strong> in the popup. The bot installs in seconds.</p>
+        <p>After installation, you'll see the 🤖 robot icon in your Chrome toolbar. If it's hidden, click the puzzle piece icon (🧩) and pin Quotex Bot to make it always visible.</p>
+        <div style="margin:20px 0;">
+          <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf" target="_blank" rel="noopener" class="btn btn-primary">🚀 Install Quotex Bot Free</a>
+        </div>
+
+        <h2>Step 2: Open Quotex Demo Account</h2>
+        <p>Go to <strong>qxbroker.com/en/demo-trade</strong> in Chrome. If you don't have an account, register for free — no deposit required for demo.</p>
+        <p>Click the 🤖 Quotex Bot icon in your toolbar. The bot sidebar will open on the right side of your browser, showing all the controls.</p>
+
+        <div class="article-callout warning">
+          <strong>⚠️ Important:</strong> Make sure the Trades panel at the bottom right of Quotex is always visible. The bot reads your trade results from there — never hide or minimize it while the bot is running.
+        </div>
+
+        <h2>Step 3: Choose Your Strategy</h2>
+        <p>In the sidebar you'll see four preset strategy buttons:</p>
+        <ul class="article-list">
+          <li><strong>🟢 Conservative (Low Risk)</strong> — Best for beginners. Uses 1,2,4,8 amounts with 4-step sequence</li>
+          <li><strong>🟡 Balanced (Medium Risk)</strong> — Most popular. Uses 1,2,4,8,17,35,73,151 with 8-step sequence</li>
+          <li><strong>🔴 Aggressive (High Risk)</strong> — Uses triple-up amounts for faster recovery</li>
+          <li><strong>⚡ Turbo (Very High Risk)</strong> — Extreme multiplier for large accounts only</li>
+        </ul>
+        <p>For your first time, click <strong>Conservative</strong>. This will auto-fill the Trading Sequence and Investment Amounts fields.</p>
+
+        <h2>Step 4: Set Time Interval</h2>
+        <p>Select how long each trade lasts from the Time Interval dropdown. For demo trading, we recommend starting with <strong>5 seconds</strong> or <strong>30 seconds</strong> — shorter intervals mean faster feedback on how the bot performs.</p>
+
+        <h2>Step 5: Optional — Set Risk Management</h2>
+        <p>Before starting, you can optionally set auto-stop conditions:</p>
+        <ul class="article-list">
+          <li>Check <strong>🎯 Take profit at</strong> and enter an amount (e.g. $50) — bot stops when you hit this profit</li>
+          <li>Check <strong>🛑 Stop loss at</strong> and enter an amount (e.g. $20) — bot stops when you lose this much</li>
+          <li>Check <strong>⏰ Stop after</strong> and enter minutes (e.g. 30) — bot stops after this time</li>
+        </ul>
+        <p>These are optional but highly recommended, especially when starting out.</p>
+
+        <h2>Step 6: Click Start Trading!</h2>
+        <p>Click the big green <strong>Start Trading</strong> button. The bot will immediately:</p>
+        <ul class="article-list">
+          <li>Set the time interval on the Quotex page</li>
+          <li>Set the investment amount</li>
+          <li>Click the UP or DOWN button according to your sequence</li>
+          <li>Wait for the trade result</li>
+          <li>Adjust the next investment amount (advance on loss, reset on win)</li>
+          <li>Repeat the process automatically</li>
+        </ul>
+
+        <p>You'll see the live stats bar appear on the Quotex page showing Profit, Loss, Net, and Trade count in real time.</p>
+
+        <h2>Step 7: Monitor and Learn</h2>
+        <p>Watch your first session carefully. Notice how the bot:</p>
+        <ul class="article-list">
+          <li>Advances the investment amount after a loss</li>
+          <li>Resets to the first amount after a win</li>
+          <li>Follows your direction sequence consistently</li>
+          <li>Updates stats in real time after every trade</li>
+        </ul>
+
+        <h2>Upgrading to Live Trading</h2>
+        <p>Once you're confident with demo results, you can upgrade to live trading. Click the Subscribe button in the sidebar to get the $20/month Gumroad subscription. Use the same email in the extension to verify your subscription automatically.</p>
+
+        <div class="article-cta">
+          <h3>Ready to Start? It's Free on Demo!</h3>
+          <p>Install Quotex Bot and start your first automated trading session in under 5 minutes. No credit card, no deposit, no risk.</p>
+          <a href="https://chrome.google.com/webstore/detail/dbdhnfbjkakhilkkaoemgldcikboakdf" target="_blank" rel="noopener" class="btn btn-primary">🚀 Add to Chrome — Free</a>
+        </div>
+
+        <h2>Common Questions from Beginners</h2>
+
+        <h3>The bot placed a trade in the wrong direction — is that normal?</h3>
+        <p>Yes! The bot follows a fixed direction sequence (e.g. up, down, up, down) regardless of market conditions. The martingale strategy relies on money management, not direction prediction.</p>
+
+        <h3>The bot seems slow — what should I do?</h3>
+        <p>Make sure your internet connection is stable. The bot waits for each trade to close before placing the next one. Shorter time intervals (5-10s) will feel faster.</p>
+
+        <h3>I see "Could not find trading buttons" error</h3>
+        <p>This means you're not on the Quotex trading page, or the page hasn't fully loaded. Refresh the page and make sure you're on the demo-trade or live trading page.</p>
+
+        <div class="article-nav">
+          <a href="/blog/quotex-martingale-strategy-guide" class="btn btn-secondary">← Martingale Guide</a>
+          <a href="/blog/quotex-bot-on-mobile" class="btn btn-secondary">Next: Mobile Guide →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>
+
+<style>
+.blog-article { padding: 60px 0 100px; }
+.blog-container { max-width: 800px; }
+.article-header { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+.article-meta { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; flex-wrap: wrap; }
+.article-date { font-size: 13px; color: var(--muted); }
+.article-header h1 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 16px; }
+.article-lead { font-size: 18px; color: var(--muted); line-height: 1.7; }
+.article-content h2 { font-size: 26px; font-weight: 700; margin: 40px 0 16px; }
+.article-content h3 { font-size: 20px; font-weight: 700; margin: 28px 0 12px; }
+.article-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+.article-callout { padding: 20px 24px; border-radius: 10px; margin: 24px 0; font-size: 15px; line-height: 1.7; }
+.article-callout.info { background: rgba(0,176,255,0.06); border: 1px solid rgba(0,176,255,0.2); color: var(--accent2); }
+.article-callout.warning { background: rgba(255,214,0,0.06); border: 1px solid rgba(255,214,0,0.2); color: var(--gold); }
+.article-list { display: flex; flex-direction: column; gap: 10px; margin: 16px 0 24px; list-style: none; }
+.article-list li { display: flex; gap: 10px; font-size: 15px; color: var(--muted); line-height: 1.6; }
+.article-list li::before { content: "→"; color: var(--accent); flex-shrink: 0; }
+.article-cta { background: rgba(0,230,118,0.05); border: 1px solid rgba(0,230,118,0.2); border-radius: 12px; padding: 32px; margin: 40px 0; text-align: center; }
+.article-cta h3 { font-size: 20px; margin-bottom: 10px; }
+.article-cta p { color: var(--muted); margin-bottom: 20px; font-size: 15px; }
+.article-nav { display: flex; justify-content: space-between; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 12px; }
+</style>
