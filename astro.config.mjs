@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://quotexbot.com',
+  site: 'https://quottexbot.com',
   integrations: [
     sitemap({
       changefreq: 'weekly',
