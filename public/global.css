@@ -170,3 +170,38 @@ h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.15; color: var(--
   .wa-btn span { display: none; }
   .wa-btn { padding: 14px; border-radius: 50%; }
 }
+
+/* ── ANIMATED GRADIENT BORDER CARDS ─────────────── */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin-border {
+  to { --angle: 360deg; }
+}
+.gradient-border-card {
+  position: relative;
+  border-radius: 18px;
+  background: #fff;
+  padding: 2px;
+  animation: spin-border 4s linear infinite;
+  background: conic-gradient(
+    from var(--angle),
+    #00a651, #0070f3, #7c3aed, #f59e0b, #00a651
+  );
+}
+.gradient-border-inner {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 28px;
+  height: 100%;
+}
+
+/* ── ZOOM SCALE ──────────────────────────────────── */
+@media (min-width: 1200px) {
+  html { font-size: 17px; }
+}
+@media (min-width: 1400px) {
+  html { font-size: 17.5px; }
+}

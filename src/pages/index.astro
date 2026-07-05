@@ -164,8 +164,8 @@ const reviews = [
     </div>
   </section>
 
-  <!-- HOW TO GET STARTED -->
-  <section class="section bg2" id="get-started">
+  <!-- HOW TO GET STARTED — animated gradient border cards -->
+  <section class="section" id="get-started" style="background:var(--bg2);">
     <div class="container">
       <div class="sec-hd">
         <span class="badge badge-gold">How to Get Started</span>
@@ -173,50 +173,72 @@ const reviews = [
         <p>From zero to automated trading in under 5 minutes. Free to try on demo — no credit card required.</p>
       </div>
       <div class="gs-grid">
-        <div class="gs-card">
-          <div class="gs-num">01</div>
-          <div class="gs-ico">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="10" fill="#EA4335" opacity=".15"/>
-              <circle cx="12" cy="12" r="10" stroke="#4285F4" stroke-width="1.5" fill="none"/>
-              <circle cx="12" cy="12" r="4" fill="#4285F4"/>
-              <path d="M12 2 H21.5" stroke="#EA4335" stroke-width="2" stroke-linecap="round"/>
-              <path d="M12 2 L7.1 10.5" stroke="#FBBC04" stroke-width="2" stroke-linecap="round"/>
-              <path d="M16.9 10.5 L7.1 10.5" stroke="#34A853" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+
+        <!-- Card 1 -->
+        <div class="agb-wrap" style="--c1:#00a651;--c2:#0070f3;--c3:#00a651;">
+          <div class="agb-inner">
+            <div class="gs-num">01</div>
+            <div class="gs-ico">
+              <svg width="44" height="44" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+                <!-- Chrome rings -->
+                <circle cx="12" cy="12" r="9" fill="#4285F4"/>
+                <path d="M12 3 H21" stroke="#EA4335" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M12 3 L7.3 11" stroke="#FBBC04" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M16.7 11 L7.3 11" stroke="#34A853" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="4" fill="white"/>
+              </svg>
+            </div>
+            <div class="gs-step-badge">Step 1</div>
+            <h3>Install Chrome Extension</h3>
+            <p>Add Quotex Bot from the Chrome Web Store. Completely free — no account or credit card required for demo mode.</p>
+            <a href={CHROME_URL} target="_blank" rel="noopener" class="btn btn-primary gs-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="rgba(255,255,255,0.3)"/><circle cx="12" cy="12" r="5" fill="white" opacity=".5"/><path d="M12 3H21" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M12 3L7.3 11" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M16.7 11L7.3 11" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="white"/></svg>
+              Add to Chrome — Free
+            </a>
+            <div class="gs-note">✅ Works on demo immediately after install</div>
           </div>
-          <h3>Install Chrome Extension</h3>
-          <p>Add Quotex Bot from the Chrome Web Store. Completely free — no account required for demo mode.</p>
-          <a href={CHROME_URL} target="_blank" rel="noopener" class="btn btn-primary gs-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="4" fill="white"/><path d="M12 2 H21.5" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M12 2 L7.1 10.5" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M16.9 10.5 L7.1 10.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-            Add to Chrome — Free
-          </a>
-          <div class="gs-note">✅ Works on demo immediately after install</div>
         </div>
 
-        <div class="gs-card">
-          <div class="gs-num">02</div>
-          <div class="gs-ico">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#0070f3" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#0070f3" stroke-width="1.5"/><circle cx="16" cy="8" r="3" fill="rgba(0,112,243,0.15)" stroke="#0070f3" stroke-width="1.2"/><path d="M14.8 8.1l1 1 1.8-1.8" stroke="#0070f3" stroke-width="1.2"/></svg>
+        <!-- Card 2 -->
+        <div class="agb-wrap" style="--c1:#0070f3;--c2:#7c3aed;--c3:#0070f3;">
+          <div class="agb-inner">
+            <div class="gs-num">02</div>
+            <div class="gs-ico">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="3" width="20" height="14" rx="3" fill="#eff6ff" stroke="#0070f3" stroke-width="1.5"/>
+                <path d="M8 21h8M12 17v4" stroke="#0070f3" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="16" cy="8.5" r="3" fill="#0070f3" opacity=".15" stroke="#0070f3" stroke-width="1.2"/>
+                <path d="M14.8 8.6l1 1 1.8-1.8" stroke="#0070f3" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="gs-step-badge" style="background:rgba(0,112,243,0.1);color:#0070f3;border-color:rgba(0,112,243,0.2);">Step 2 — Optional</div>
+            <h3>Buy Live Trading Access</h3>
+            <p>For real money trading, get $20/month subscription on Gumroad. Use the same email in the extension to verify. <strong>Demo is free forever — skip this if just starting!</strong></p>
+            <a href={GUMROAD_URL} target="_blank" rel="noopener" class="btn btn-blue gs-btn">
+              💳 Buy on Gumroad — $20/mo
+            </a>
+            <div class="gs-note" style="background:rgba(0,112,243,0.06);color:#1e40af;">🎮 Skip this — demo is fully free, no time limit</div>
           </div>
-          <h3>Buy Live Trading Access</h3>
-          <p>Want to trade with real money? Get the $20/month subscription on Gumroad. Use same email in extension.</p>
-          <a href={GUMROAD_URL} target="_blank" rel="noopener" class="btn btn-blue gs-btn">
-            💳 Buy on Gumroad — $20/mo
-          </a>
-          <div class="gs-note">🎮 Skip this — demo is fully free forever</div>
         </div>
 
-        <div class="gs-card">
-          <div class="gs-num">03</div>
-          <div class="gs-ico">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#f59e0b" stroke-width="1.5" fill="rgba(245,158,11,0.12)"/></svg>
+        <!-- Card 3 -->
+        <div class="agb-wrap" style="--c1:#f59e0b;--c2:#00a651;--c3:#f59e0b;">
+          <div class="agb-inner">
+            <div class="gs-num">03</div>
+            <div class="gs-ico">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="gs-step-badge" style="background:rgba(245,158,11,0.1);color:#92400e;border-color:rgba(245,158,11,0.25);">Step 3</div>
+            <h3>Start Auto Trading</h3>
+            <p>Open Quotex demo or live page, open the sidebar, pick a preset strategy, set your risk limits and click Start Trading!</p>
+            <a href="/how-it-works" class="btn btn-outline gs-btn">📖 View Full Guide</a>
+            <div class="gs-note" style="background:rgba(245,158,11,0.07);color:#92400e;">⚡ First trade executes in under 30 seconds</div>
           </div>
-          <h3>Start Auto Trading</h3>
-          <p>Open Quotex demo or live page, open sidebar, pick a preset, set risk limits and click Start Trading!</p>
-          <a href="/how-it-works" class="btn btn-outline gs-btn">📖 View Full Guide</a>
-          <div class="gs-note">⚡ First trade executes in under 30 seconds</div>
         </div>
+
       </div>
     </div>
   </section>
@@ -358,6 +380,13 @@ const reviews = [
 </Layout>
 
 <style is:global>
+
+/* ANIMATED GRADIENT BORDER */
+@property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+@keyframes borderspin { to { --angle: 360deg; } }
+.agb-wrap { border-radius: 20px; padding: 3px; background: conic-gradient(from var(--angle), var(--c1,#00a651), var(--c2,#0070f3), var(--c3,#00a651)); animation: borderspin 4s linear infinite; box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+.agb-inner { background: #fff; border-radius: 18px; padding: 38px 28px; height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.gs-step-badge { display: inline-flex; align-items: center; padding: 5px 14px; border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: .5px; background: rgba(0,166,81,0.1); color: var(--accent); border: 1px solid rgba(0,166,81,0.2); margin-bottom: 14px; }
 /* HERO */
 .hero{position:relative;padding:100px 0 80px;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(0,166,81,0.04) 0%,rgba(0,112,243,0.04) 100%);}
@@ -432,6 +461,47 @@ const reviews = [
 .mc-i{font-size:26px;margin-bottom:12px;}
 .mc h3{font-size:16px;font-weight:700;margin-bottom:8px;color:var(--text);}
 .mc p{font-size:14px;color:var(--muted);line-height:1.65;}
+
+
+/* ANIMATED GRADIENT BORDER CARDS */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin {
+  to { --angle: 360deg; }
+}
+.agb-wrap {
+  border-radius: 20px;
+  padding: 3px;
+  background: conic-gradient(from var(--angle), var(--c1), var(--c2), var(--c3));
+  animation: spin 5s linear infinite;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+.agb-inner {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 40px 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.gs-step-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: rgba(0,166,81,0.1);
+  color: var(--accent);
+  border: 1px solid rgba(0,166,81,0.2);
+  margin-bottom: 14px;
+}
 
 /* GET STARTED */
 .gs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}

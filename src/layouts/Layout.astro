@@ -14,12 +14,17 @@ const fullTitle = title.includes('Quotex Bot') ? title : `${title} | Quotex Bot`
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.1"/>
   <title>{fullTitle}</title>
   <meta name="description" content={description}/>
   <meta name="keywords" content={keywords}/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
   <link rel="canonical" href={canonical}/>
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="Lmvx0U4Aj9KfpQxf9A79lhKi5H5_0KLhsDMsHaGytOQ"/>
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content={fullTitle}/>
   <meta property="og:description" content={description}/>
@@ -30,13 +35,25 @@ const fullTitle = title.includes('Quotex Bot') ? title : `${title} | Quotex Bot`
   <meta name="twitter:title" content={fullTitle}/>
   <meta name="twitter:description" content={description}/>
   <meta name="twitter:image" content={ogImage}/>
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
   <link rel="stylesheet" href="/global.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Schema -->
   {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)}/>}
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Quotex Bot","url":"https://quotexbot.com","logo":"https://quotexbot.com/favicon.svg","contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://wa.me/+923064200589"}}</script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKLGXFMFQL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZKLGXFMFQL');
+  </script>
 </head>
 <body>
   <slot/>

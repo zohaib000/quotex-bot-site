@@ -35,7 +35,7 @@ const schema = {
 >
   <Header />
 
-  <section class="page-hero">
+  <section style="padding:80px 0 60px;text-align:center;border-bottom:1px solid var(--border);">
     <div class="container">
       <span class="badge badge-green">Setup Guide</span>
       <h1>How to Use <span class="gradient-text">Quotex Bot</span></h1>
@@ -82,7 +82,7 @@ const schema = {
   <!-- STEPS -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom:56px;text-align:center;">
         <span class="badge badge-blue">Step by Step</span>
         <h2>Complete Setup <span class="gradient-text">Guide</span></h2>
       </div>
@@ -101,6 +101,24 @@ const schema = {
             <div class="step-tip">💡 Tip: The extension automatically opens when you visit any Quotex/QXBroker page.</div>
           </div>
         </div>
+        <div class="step-detailed buy-step">
+          <div class="step-num-large">01.5</div>
+          <div class="step-content">
+            <div class="buy-step-badge">💰 Optional — For Live Trading Only</div>
+            <h3>Buy Live Trading Subscription <span class="optional-tag">Optional</span></h3>
+            <p><strong>Demo mode is completely free</strong> — skip this step if you want to practice first. You only need this subscription if you want to trade with real money on a live account.</p>
+            <p style="color:var(--muted);margin-top:12px;">Get the $20/month subscription on Gumroad. Use the exact same email address in the Quotex Bot extension to verify your subscription automatically.</p>
+            <div class="step-actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
+              <a href="https://zhorizon7.gumroad.com/l/alfvjx" target="_blank" rel="noopener" class="btn btn-primary" style="background:#0070f3;border-color:#0070f3;">💳 Buy on Gumroad — $20/month</a>
+              <a href="/pricing" class="btn btn-secondary">Compare Plans</a>
+            </div>
+            <div class="step-tip" style="background:rgba(0,112,243,0.06);border-color:rgba(0,112,243,0.2);color:#1e40af;">
+              🎮 <strong>Just want to try first?</strong> Skip this step entirely — demo mode has full features, zero cost, no time limit.
+            </div>
+          </div>
+        </div>
+
+
 
         <div class="step-detailed">
           <div class="step-num-large">02</div>
@@ -259,7 +277,7 @@ const schema = {
   <!-- FAQ QUICK -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom:56px;text-align:center;">
         <span class="badge badge-green">Common Questions</span>
         <h2>Quick Answers for <span class="gradient-text">New Users</span></h2>
       </div>
@@ -301,6 +319,13 @@ const schema = {
 </Layout>
 
 <style is:global>
+
+.buy-step { background: rgba(0,112,243,0.03); border-radius: 12px; padding: 24px; border: 1.5px dashed rgba(0,112,243,0.3); margin: 16px 0; }
+.buy-step-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 100px; font-size: 13px; font-weight: 700; background: rgba(0,112,243,0.1); color: var(--accent2); border: 1px solid rgba(0,112,243,0.2); margin-bottom: 12px; }
+.optional-tag { display: inline-block; font-size: 11px; font-weight: 600; background: rgba(0,112,243,0.1); color: var(--accent2); padding: 3px 10px; border-radius: 100px; margin-left: 10px; vertical-align: middle; }
+.section-header .badge { display: inline-flex !important; margin-bottom: 16px !important; }
+.section-header h2 { margin-top: 14px !important; margin-bottom: 16px !important; font-size: clamp(26px,3.5vw,42px) !important; }
+.section-header > p { color: var(--muted) !important; font-size: 16px !important; line-height: 1.75 !important; }
 .page-hero { padding: 80px 0 60px; text-align: center; border-bottom: 1px solid var(--border); }
 .page-hero h1 { font-size: clamp(32px, 5vw, 52px); margin: 16px 0 16px; }
 .page-hero p { color: var(--muted); font-size: 17px; max-width: 600px; margin: 0 auto; }
